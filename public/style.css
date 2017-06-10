@@ -1,11 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One|Montserrat|Open+Sans|Roboto:300i,400,700,900');
+
+body, .page-heading {
+  font-family: 'Poiret One', 'Roboto', 'Helvetica Neue', 'sans-serif';
+}
+
+.section1,.section2 {
+ font-family: 'Open Sans'
+}
+
 .bold {
   font-weight: 700;
 }
 
 .page-heading {
   text-align: center;
-  color: #dedede;
-  background: linear-gradient(to bottom, #333, #555);
+  color: #222;
+  /*background: linear-gradient(to bottom, #333, #555);*/
   
   font-size: 3.5em;
   padding: 30px 10px 40px;
@@ -15,9 +25,8 @@
 
 .section1 {
   text-align: center;
-  color: #fff;
-  background: linear-gradient(#555, #888);
-  padding: 30px 10px 50px;
+  color: #222;
+  padding: 30px 10px 120px;
 }
 
 .section1 h1 {
@@ -26,7 +35,9 @@
 
 .section2 {
   margin: 0;
-  padding: 30px 10px 200px;
+  padding: 40px 10px 200px;
+  background: linear-gradient(to bottom right, rgb(0,230,118) 33%, yellow);
+
 }
 
 .section2>h3 {
@@ -37,7 +48,8 @@
 
 .section2 a {
   font-size: 20px;
-  color: #111;
+  color: rgba(0,77,64 ,1);
+  text-shadow: 1px 1px 3px #444;
   text-decoration: none ;
 }
 
@@ -46,7 +58,7 @@
   min-width: 200px;
   height: 50vw;
   min-height: 200px;
-  box-shadow: 0 0 0px 10px #666;
+  box-shadow: 0 0 40px 1px #666;
   margin: 10px 30px 20px 25vw;
 }
 
