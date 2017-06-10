@@ -12,13 +12,13 @@
     </h1>
     
   <address>
-    telephone: <span class="bold">{{$ctrl.provider.tel}}</span><br>
+    <i class="fa fa-phone" aria-hidden="true"> </i> <span class="bold">{{$ctrl.provider.tel}}</span><br>
     <br>
-    email: <span class="bold"><a href="mailto:patriciaromano@cox.net">{{$ctrl.provider.email}}</a></span><br>
+    <i class="fa fa-envelope-o"> </i><span class="bold"><a href="mailto:patriciaromano@cox.net">{{$ctrl.provider.email}}</a></span><br>
     <br>
     
-    office: <span class="bold">{{$ctrl.provider.address1}}</span><br>
-    <span class="bold">{{$ctrl.provider.address2}}</span><br>
+    <a style="text-decoration:none" href="https://goo.gl/maps/1okmtzEUX6P2" target="_blank"><i class="fa fa-map-marker"> </i> <span class="bold">{{$ctrl.provider.address1}}</span><br>
+      <span class="bold">{{$ctrl.provider.address2}}</span><br></a>
   </address>
 
 </section>
