@@ -26,25 +26,36 @@ body, .page-heading {
 .section1 {
   text-align: center;
   color: #222;
-  padding: 30px 10px 120px;
+  padding: 30px 10px 80px;
 }
 
 .section1 h1 {
   font-size: 2em;
 }
 
+.section1 a {
+  color: #222;
+}
+
 .section2 {
   position:relative;
   margin: 0;
-  padding: 40px 10px 200px;
-  background: linear-gradient(to bottom right, rgb(0,230,118) 33%, yellow);
-
+  padding: 0 0 200px;
+  background-image: linear-gradient(to bottom right, rgb(0,230,118) 33%, yellow);
+  
 }
 
 .section2>h3 {
   text-align: center;
   padding: 0 0 20px;
   margin: 0;
+  height: 100px;
+
+  background-image: linear-gradient(to bottom, rgba(255,255,255,.3),rgba(50,50,50,.2)), url('http://i.imgur.com/lO70yjz.png');
+  background-repeat: no-repeat;
+  background-size: 900px 500px;
+  background-position-y: -150px;
+  background-position-x: center;
 }
 
 .section2 a {
