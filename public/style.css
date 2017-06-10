@@ -56,7 +56,7 @@ body, .page-heading {
   margin: 0;
   height: 100px;
 
-  background-image: linear-gradient(to bottom, rgba(255,255,255,.3),rgba(50,50,50,.2)), url('http://i.imgur.com/lO70yjz.png');
+  background-image: url('http://i.imgur.com/lO70yjz.png');
   background-repeat: no-repeat;
   background-size: 900px 500px;
   background-position-y: -150px;
