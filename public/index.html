@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MTWApp">  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manual Therapy for Wellness</title>
+<!-- Vendor Scripts -->
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular-route/angular-route.js"></script>
+    <!--<script src="./node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>-->
+    <script src="./node_modules/angular-animate/angular-animate.js"></script>
+    <script src="./node_modules/angular-aria/angular-aria.js"></script>
+    <script src="./node_modules/angular-material/angular-material.js"></script>
+
+    <link rel="stylesheet" href="./node_modules/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+    <base href="/">
+  </head>
+  <body ng-cloak>
+    <md-nav-bar
+      md-selected-nav-item="currentNavItem"
+      nav-bar-aria-label="navagation links">
+      <md-nav-item md-nav-click="goto('home')" name="home">
+        Home
+      </md-nav-item>
+<!--      
+      <md-nav-item md-nav-click="goto('services-pricing')" name="services-pricing">
+        Services &amp; Pricing
+      </md-nav-item>
+      <md-nav-item md-nav-click="goto('provider-profile')" name="about-page">
+        About Your Provder
+      </md-nav-item>
+      <md-nav-item md-nav-click="goto('contact')" name="contact-page">
+        Location &amp; Contact
+      </md-nav-item>
+      -->
+    </md-nav-bar>
+    
+    <ng-view></ng-view>
+    <!--<ui-view name='main-content'></ui-view>-->
+  </body>
+
+
+  <!-- Local Components -->
+  <script src="./app.module.js"></script>
+  <script src="./app.config.js"></script>
+  <script src="./components/home/home.component.js"></script>
+
+</html>
