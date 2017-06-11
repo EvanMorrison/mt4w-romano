@@ -1,13 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One|Open+Sans');
 
-.nav-logo {
-  position: relative;
-  padding-left: 15px;
-  height: 50px;
+* {
+  background-color: transparent;
 }
 
+.nav-logo {
+  position: relative;
+  padding: 5px 0 5px 15px;
+  height: 40px;
+}
+
+
+/* styling for background logo
+    for an empty div with id=bg-logo  */
+/* #bg-logo {
+  position: absolute;
+  z-index: -100;
+  height:100vw;
+  width:100vw;
+  top: 100px;
+  right: 0px;
+  background: linear-gradient(rgba(250,250,250,.9),rgba(250,250,250,.9)),  url('http://i.imgur.com/vzlnjKR.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+ */
 body, .page-heading {
   font-family: 'Poiret One', 'Open Sans', 'Helvetica Neue', 'sans-serif';
+  background: transparent;
 }
 
 .section1,.section2 {
@@ -21,8 +42,6 @@ body, .page-heading {
 .page-heading {
   text-align: center;
   color: #222;
-  /*background: linear-gradient(to bottom, #333, #555);*/
-  
   font-size: 3.5em;
   padding: 30px 10px 40px;
   margin: 0;
