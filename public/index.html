@@ -28,26 +28,7 @@
     <base href="/">
   </head>
   <body ng-cloak>
-    <md-nav-bar
-      md-selected-nav-item="currentNavItem"
-      nav-bar-aria-label="navagation links">
-        <img class="nav-logo" ng-src="http://i.imgur.com/mWgnmRx.png" alt="">
-      <md-nav-item md-nav-click="goto('home')" name="home">
-        Home
-      </md-nav-item>
-<!--      
-      <md-nav-item md-nav-click="goto('services-pricing')" name="services-pricing">
-        Services &amp; Pricing
-      </md-nav-item>
-      <md-nav-item md-nav-click="goto('provider-profile')" name="about-page">
-        About Your Provder
-      </md-nav-item>
-      <md-nav-item md-nav-click="goto('contact')" name="contact-page">
-        Location &amp; Contact
-      </md-nav-item>
-      -->
-    </md-nav-bar>
-    
+    <navbar ng-include="'components/navbar/navbar.template.html'" >  </navbar>
     <ng-view></ng-view>
     <!--<ui-view name='main-content'></ui-view>-->
   </body>
@@ -57,5 +38,6 @@
   <script src="./app.module.js"></script>
   <script src="./app.config.js"></script>
   <script src="./components/home/home.component.js"></script>
+  <script src="./components/navbar/navbar.component.js"></script>
 
 </html>

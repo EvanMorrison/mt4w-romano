@@ -5,6 +5,7 @@
  angular.module('MTWApp', [
     'ngMaterial',
     'ngRoute',
+    'Navbar',
     'Home'
   ])
 
