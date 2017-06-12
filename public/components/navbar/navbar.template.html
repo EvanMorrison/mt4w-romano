@@ -1,21 +1,17 @@
 <md-nav-bar
-      md-no-ink-bar="true"
       md-selected-nav-item="currentNavItem"
       nav-bar-aria-label="navagation links">
-    <img class="nav-logo" ng-src="http://i.imgur.com/mWgnmRx.png" alt="">
-    <md-nav-item md-nav-click="$ctrl.goto('home')" name="home">
+    <img class="nav-logo" ng-src="http://i.imgur.com/dPe5jfa.png" alt="">
+    <md-nav-item md-nav-href="home" name="home">
       Home
     </md-nav-item>
-    <md-nav-item md-nav-click="goto('services-pricing')" name="services-pricing">
+    <md-nav-item md-nav-href="services" name="services-pricing">
       Services &amp; Pricing
     </md-nav-item>
-    <md-nav-item md-nav-click="goto('provider-profile')" name="about">
-      About Your Provder
+    <md-nav-item md-nav-href="about" name="about">
+      About Us
     </md-nav-item>
-    <md-nav-item md-nav-click="goto('contact')" name="contact">
-      Location &amp; Contact
+    <md-nav-item md-nav-href="appointments" name="appointments">
+      Scheduling an Appointment
     </md-nav-item>
 </md-nav-bar>
-<div>
-  Current Nav Item: {{currentNavItem}}
-</div>

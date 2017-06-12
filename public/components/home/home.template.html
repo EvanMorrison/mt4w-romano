@@ -1,26 +1,30 @@
 <div>
-  <h1 class="page-heading">Manual Therapy for Wellness</h1>
-  
-  <!--<div class="logo-banner">
-    <img class="logo" src="http://i.imgur.com/mWgnmRx.png" alt="logo">
-  </div>-->
-  
+  <div class="page-heading">
+    <h1>Manual Therapy <br>for Wellness</h1>
+    <p id="subheading">
+      <span class="subheading-text"> massage </span> 
+      <i class="fa fa-circle" aria-hidden="true"></i> 
+      <span class="subheading-text"> manual lymphatic drainage </span> 
+      <i class="fa fa-circle" aria-hidden="true"></i> 
+      <span class="subheading-text"> myofascial release </span> 
+    </p>
+  </div>
 
 <section class="section1">
-    <h1>
-      {{$ctrl.provider.name}}, CLT, LMT
-    </h1>
-    
-  <address>
-    <i class="fa fa-phone" aria-hidden="true"> </i> <span class="bold">{{$ctrl.provider.tel}}</span><br>
-    <br>
-    <i class="fa fa-envelope-o"> </i> <span class="bold"><a href="mailto:patriciaromano@cox.net">{{$ctrl.provider.email}}</a></span><br>
-    <br>
-    
-    <a style="text-decoration:none" href="https://goo.gl/maps/1okmtzEUX6P2" target="_blank"><i class="fa fa-map-marker"> </i> <span class="bold">{{$ctrl.provider.address1}}</span><br>
-      <span class="bold">{{$ctrl.provider.address2}}</span><br></a>
-  </address>
-
+  <h3><address>
+      <i class="fa fa-phone" aria-hidden="true"> </i> 
+      <span class="bold">{{$ctrl.provider.tel}}</span>
+      <br>
+      <i class="fa fa-envelope-o"> </i>
+      <span class="bold"><a href="mailto:patriciaromano@cox.net">{{$ctrl.provider.email}}</a></span>
+      <br>
+      <a style="text-decoration:none" href="https://goo.gl/maps/1okmtzEUX6P2" target="_blank">
+        <i class="fa fa-map-marker"></i> 
+        <span id="address1" class="bold">{{$ctrl.provider.address1}}</span><br>
+        <i class="fa fa-map-marker" style="visibility:hidden;padding:0"></i> 
+        <span id="address2" class="bold">{{$ctrl.provider.address2}}</span><br></a>
+    </address>
+    </h3>
 </section>
 
 

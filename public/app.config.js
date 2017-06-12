@@ -11,9 +11,16 @@
         .when('/', {
           template: '<home-component></home-component>'
         })
-        .otherwise('/', {
-          template: '<home-component></home-component>'
-        });
+        .when('/about', {
+          template: '<about-component></about-component>'
+        })
+        .when('/services', {
+          template: '<services-component></services-component>'
+        })
+        .when('/appointments', {
+          template: '<scheduling-component></scheduling-component>'
+        })
+        .otherwise('/');
 
       }
     ])

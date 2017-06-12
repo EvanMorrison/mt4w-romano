@@ -6,7 +6,10 @@
     'ngMaterial',
     'ngRoute',
     'Navbar',
-    'Home'
+    'Home',
+    'About',
+    'Services',
+    'Scheduling'
   ])
 
 })();
