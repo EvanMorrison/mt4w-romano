@@ -11,20 +11,20 @@
   </div>
 
 <section class="section1">
-  <h3><address>
-      <i class="fa fa-phone" aria-hidden="true"> </i> 
+  <h2 id="provider-name"><strong>Trish Romano</strong>, CLT, LMT</h2>
+    <address id="contact-info">
+      <i class="fa fa-phone" aria-hidden="true" style="margin-top: 20px"> </i> 
       <span class="bold">{{$ctrl.provider.tel}}</span>
       <br>
-      <i class="fa fa-envelope-o"> </i>
-      <span class="bold"><a href="mailto:patriciaromano@cox.net">{{$ctrl.provider.email}}</a></span>
+      <i class="fa fa-envelope-o" style="margin-top: 20px"> </i>
+      <span class="bold"><a href="mailto:{{$ctrl.provider.email}}">{{$ctrl.provider.email}}</a></span>
       <br>
       <a style="text-decoration:none" href="https://goo.gl/maps/1okmtzEUX6P2" target="_blank">
-        <i class="fa fa-map-marker"></i> 
+        <i class="fa fa-map-marker" style="margin-top: 20px"></i> 
         <span id="address1" class="bold">{{$ctrl.provider.address1}}</span><br>
         <i class="fa fa-map-marker" style="visibility:hidden;padding:0"></i> 
         <span id="address2" class="bold">{{$ctrl.provider.address2}}</span><br></a>
     </address>
-    </h3>
 </section>
 
 

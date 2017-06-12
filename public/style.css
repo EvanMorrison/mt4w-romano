@@ -1,33 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One|Open+Sans');
 
-* {
+* body {
   background-color: transparent;
 }
 
 .nav-logo {
   /*position: relative;*/
   padding: 5px 0 15px 5px;
+  width: 60px;
   height: 40px;
+}
+
+md-nav-bar {
+  font-family: 'Open Sans'
 }
 
 /* styling for background logo
     for an empty div with id=bg-logo  */
  #bg-logo {
   position: absolute;
-  z-index: -100;
+  z-index: -1;
   height:40vw;
   width:40vw;
   top: 80px;
   right: 0px;
   height:20vw;
-  background: linear-gradient(rgba(250,250,250,.3),rgba(250,250,250,.3)),  url('http://i.imgur.com/dPe5jfa.png');
+  background: linear-gradient(rgba(250,250,250,.3),rgba(250,250,250,.3)),  url('http://i.imgur.com/nzQgYC8.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
  
 
-body, .page-heading {
+.page-heading {
   font-family: 'Poiret One', 'Open Sans', 'Helvetica Neue', 'sans-serif';
   background: transparent;
 }
@@ -70,13 +75,16 @@ body, .page-heading {
   padding: 110px 10px 80px;
 }
 
-.section1 h1 {
-  font-size: 2em;
+.section1 #provider-name {
+  padding: 0;
+  margin: 0;
 }
 
+.section1 #contact-info {
+
+}
 .section1 .fa {
   margin-right: 10px;
-  padding-top: 20px;
 }
 
 .section1 a {
@@ -151,3 +159,14 @@ body, .page-heading {
   font-family: 'Open Sans', 'Helvetica Neue', 'sans serif';
   font-size: 16px;
 }
+
+#email-form {
+  border: 1px transparent;
+  border-radius: 5px;
+  padding: 20px;
+  font-weight: 400;
+  background-color: rgba(173,193,240,.2);
+
+}
+
+
