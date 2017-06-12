@@ -8,7 +8,6 @@
 
   function AboutController() {
     const ctrl = this;
-    ctrl.content = 'Manual Therapy for Wellness is a multi-disciplinary approach to health and wellbeing, incorporating massage, lymphatic therapy, and myofascial release.' 
   }
 
 })()
