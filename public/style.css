@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One|Open+Sans');
 
+* {
+  background-color: transparent;
+}
+
 .nav-logo {
   /*position: relative;*/
   padding: 5px 0 15px 5px;
