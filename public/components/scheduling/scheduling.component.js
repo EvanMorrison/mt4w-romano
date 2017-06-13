@@ -1,7 +1,7 @@
 (function() {
 
   angular.module('Scheduling', [])
-    .component('schedulingComponent', {
+    .component('scheduling', {
       templateUrl: '/components/scheduling/scheduling.template.html',
       controller: [SchedulingController]
     })

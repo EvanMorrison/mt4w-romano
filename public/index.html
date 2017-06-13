@@ -12,17 +12,14 @@
 
     <title>Manual Therapy for Wellness</title>
 <!-- Vendor Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-aria.min.js"></script>
-    <!-- <script src="./node_modules/angular/angular.min.js"></script>
-    <script src="./node_modules/angular-route/angular-route.min.js"></script>
-    <script src="./node_modules/angular-animate/angular-animate.min.js"></script>
-    <script src="./node_modules/angular-aria/angular-aria.min.js"></script> -->
-    <script src="./vendorAssets/angular-material.min.js"></script>
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="./bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="./bower_components/angular-material/angular-material.min.js"></script>
 
-    <link rel="stylesheet" href="./vendorAssets/angular-material.min.css">
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.min.css">
     <script src="https://use.fontawesome.com/dc76fbddb7.js"></script>
     <link rel="stylesheet" href="style.css">
     <base href="/">
@@ -30,7 +27,7 @@
   <body ng-cloak>
     <navbar ng-include="'components/navbar/navbar.template.html'" >  </navbar>
     <div id="bg-logo"></div>
-    <ng-view></ng-view>
+    <ui-view></ui-view>
     <!--<ui-view name='main-content'></ui-view>-->
   </body>
 

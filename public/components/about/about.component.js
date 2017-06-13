@@ -1,7 +1,7 @@
 (function() {
 
   angular.module('About', [])
-  .component('aboutComponent', {
+  .component('about', {
     templateUrl: '/components/about/about.template.html',
     controller: [AboutController]
   });

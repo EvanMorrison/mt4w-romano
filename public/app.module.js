@@ -4,7 +4,7 @@
 
  angular.module('MTWApp', [
     'ngMaterial',
-    'ngRoute',
+    'ui.router',
     'Navbar',
     'Home',
     'About',
