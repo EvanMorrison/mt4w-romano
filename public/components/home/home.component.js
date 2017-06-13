@@ -1,7 +1,7 @@
 (function() {
 
   angular.module('Home', [])
-  .component('homeComponent', {
+  .component('home', {
     templateUrl: '/components/home/home.template.html',
     controller: HomeController
   });

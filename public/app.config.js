@@ -2,26 +2,32 @@
 
   angular
     .module('MTWApp')
-    .config(['$locationProvider', '$routeProvider',
-      function config($locationProvider, $routeProvider) {
+    .config(['$locationProvider', '$stateProvider', '$urlRouterProvider',
+      function config($locationProvider, $stateProvider, $urlRouterProvider) {
         $locationProvider.html5Mode(true);
 
+        $urlRouterProvider.otherwise('/');
 
-        $routeProvider
-        .when('/', {
-          template: '<home-component></home-component>'
-        })
-        .when('/about', {
-          template: '<about-component></about-component>'
-        })
-        .when('/services', {
-          template: '<services-component></services-component>'
-        })
-        .when('/appointments', {
-          template: '<scheduling-component></scheduling-component>'
-        })
-        .otherwise('/');
 
+        $stateProvider
+          .state('home', {
+            url: '/',
+            component: 'home'
+          })
+          .state('about', {
+            url: '/about',
+            component: 'about'
+          })
+          .state('services', {
+            url: '/services',
+            component: 'services'
+          })
+          .state('scheduling', {
+            url: '/appointments',
+            component: 'scheduling'
+          })
+
+        
       }
     ])
 
