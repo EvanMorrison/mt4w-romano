@@ -1,32 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One|Open+Sans');
 
-* {
+* body {
   background-color: transparent;
 }
 
 .nav-logo {
-  position: relative;
-  padding: 5px 0 5px 15px;
+  /*position: relative;*/
+  padding: 5px 0 15px 5px;
+  width: 60px;
   height: 40px;
 }
 
+md-nav-bar {
+  font-family: 'Open Sans'
+}
 
 /* styling for background logo
     for an empty div with id=bg-logo  */
-/* #bg-logo {
+ #bg-logo {
   position: absolute;
-  z-index: -100;
-  height:100vw;
-  width:100vw;
-  top: 100px;
+  z-index: -1;
+  height:40vw;
+  width:40vw;
+  top: 80px;
   right: 0px;
-  background: linear-gradient(rgba(250,250,250,.9),rgba(250,250,250,.9)),  url('http://i.imgur.com/vzlnjKR.png');
+  height:20vw;
+  background: linear-gradient(rgba(250,250,250,.3),rgba(250,250,250,.3)),  url('http://i.imgur.com/nzQgYC8.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
- */
-body, .page-heading {
+ 
+
+.page-heading {
   font-family: 'Poiret One', 'Open Sans', 'Helvetica Neue', 'sans-serif';
   background: transparent;
 }
@@ -39,23 +45,46 @@ body, .page-heading {
   font-weight: 700;
 }
 
-.page-heading {
-  text-align: center;
+.page-heading h1 {
+  margin: 0 15vw;
   color: #222;
-  font-size: 3.5em;
-  padding: 30px 10px 40px;
+  font-size: 4em;
+  padding: 30px 10px 0px 0;
+}
+
+#subheading {
+  margin: 0 0 0 15vw;
+  font-family: 'Open Sans', 'Helvetica Neue';
+  border-top: 1px solid #222;
+  width: 50vw;
+  color: #222;
+  font-size: 6px;
+}
+
+#subheading .fa-circle {
+  margin: 0 10px;
+}
+
+.subheading-text {
+  font-size: 14px;
+}
+
+.section1 {
+  margin: 0 0 0 15vw;
+  color: #222;
+  padding: 110px 10px 80px;
+}
+
+.section1 #provider-name {
+  padding: 0;
   margin: 0;
 }
 
+.section1 #contact-info {
 
-.section1 {
-  text-align: center;
-  color: #222;
-  padding: 30px 10px 80px;
 }
-
-.section1 h1 {
-  font-size: 2em;
+.section1 .fa {
+  margin-right: 10px;
 }
 
 .section1 a {
@@ -119,4 +148,26 @@ body, .page-heading {
   width:50vw;
   max-width: 300px;
 }
+
+.page-content {
+  background:transparent;
+  margin-left:10vw;
+  width:50vw
+}
+
+.body-text {
+  font-family: 'Open Sans', 'Helvetica Neue', 'sans serif';
+  font-size: 16px;
+  text-align: justify;
+}
+
+#email-form {
+  border: 1px transparent;
+  border-radius: 5px;
+  padding: 20px;
+  font-weight: 400;
+  background-color: rgba(173,193,240,.2);
+
+}
+
 

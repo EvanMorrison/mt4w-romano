@@ -4,8 +4,12 @@
 
  angular.module('MTWApp', [
     'ngMaterial',
-    'ngRoute',
-    'Home'
+    'ui.router',
+    'Navbar',
+    'Home',
+    'About',
+    'Services',
+    'Scheduling'
   ])
 
 })();
