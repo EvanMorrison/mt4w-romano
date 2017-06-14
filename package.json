@@ -1,15 +1,17 @@
 {
-  "name": "TrishRomano",
+  "name": "trishRomano",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "bower install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.3"
-  }
+  },
+  "cacheDirectories": ["public/bower_components"]
 }
