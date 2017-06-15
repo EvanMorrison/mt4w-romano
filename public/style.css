@@ -7,7 +7,7 @@
 .nav-logo {
   /*position: relative;*/
   padding: 5px 0 15px 5px;
-  width: 60px;
+  width: 40px;
   height: 40px;
 }
 
@@ -21,11 +21,11 @@ md-nav-bar {
   position: absolute;
   z-index: -1;
   height:40vw;
-  width:40vw;
+  width:35vw;
+  max-width: 500px;
   top: 80px;
-  right: 0px;
-  height:20vw;
-  background: linear-gradient(rgba(250,250,250,.3),rgba(250,250,250,.3)),  url('http://i.imgur.com/nzQgYC8.png');
+  right: 15px;
+  background: linear-gradient(rgba(250,250,250,.3),rgba(250,250,250,.3)),  url('http://i.imgur.com/uySxMf1.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -47,6 +47,7 @@ md-nav-bar {
 
 .page-heading h1 {
   margin: 0 15vw;
+  width: 50vw;
   color: #222;
   font-size: 4em;
   padding: 30px 10px 0px 0;
@@ -56,7 +57,7 @@ md-nav-bar {
   margin: 0 0 0 15vw;
   font-family: 'Open Sans', 'Helvetica Neue';
   border-top: 1px solid #222;
-  width: 50vw;
+  width: 45vw;
   color: #222;
   font-size: 6px;
 }
