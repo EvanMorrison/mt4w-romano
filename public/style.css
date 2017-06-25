@@ -20,12 +20,12 @@ md-nav-bar {
  #bg-logo {
   position: absolute;
   z-index: -1;
-  height:40vw;
-  width:35vw;
+  height:20vw;
+  width:20vw;
   max-width: 500px;
   top: 80px;
-  right: 15px;
-  background: linear-gradient(rgba(250,250,250,.3),rgba(250,250,250,.3)),  url('http://i.imgur.com/uySxMf1.png');
+  right: 10vw;
+  background: linear-gradient(rgba(250,250,250,0),rgba(250,250,250,0)),  url('http://i.imgur.com/nmJChXB.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
