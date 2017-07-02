@@ -1,0 +1,9 @@
+<div flex-gt-sm flex layout-gt-sm="row" layout="column" layout-align="end center" layout-align-gt-sm="start center"
+          class="navbar">
+        <md-button  ng-repeat="link in ctrl.navLinks"
+                    ng-click="ctrl.closeSidenav()"
+                    ui-sref={{link.state}} ui-sref-active="active">
+         {{link.label}}
+       </md-button>
+       
+</div>

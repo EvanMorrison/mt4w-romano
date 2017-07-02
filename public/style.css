@@ -5,32 +5,63 @@
 }
 
 .nav-logo {
-  /*position: relative;*/
-  padding: 5px 0 15px 5px;
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  border: 1px solid transparent;
+  border-radius: 28px;
 }
 
-md-nav-bar {
-  font-family: 'Open Sans'
+.navbar .active {
+  border-bottom: 2px solid red;
 }
 
 /* styling for background logo
     for an empty div with id=bg-logo  */
  #bg-logo {
   position: absolute;
-  z-index: -1;
   height:20vw;
   width:20vw;
   max-width: 500px;
   top: 80px;
   right: 10vw;
-  background: linear-gradient(rgba(250,250,250,0),rgba(250,250,250,0)),  url('http://i.imgur.com/nmJChXB.png');
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  opacity: 0.8;
+  
 }
- 
+
+@media (max-width: 959px) {
+
+  .page-heading.hero {
+    background-position: center top !important ;
+  }
+  
+
+  .bg-logo-container {
+    position: absolute;
+    top: -30px;
+    right: -11vw;
+    opacity: .1;
+  }
+  #bg-logo {
+    width: 50vw;
+    height: auto;
+  }
+  .section1 {
+    margin-right: 5vw;
+  }
+  .page-content {
+    margin-left: 10vw;
+    max-width: 80vw;
+    z-index: -1
+  }
+}
+
+.page-heading.hero {
+  height: 100vh;
+  background: url('http://i.imgur.com/anspE3W.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
 
 .page-heading {
   font-family: 'Poiret One', 'Open Sans', 'Helvetica Neue', 'sans-serif';
@@ -81,9 +112,7 @@ md-nav-bar {
   margin: 0;
 }
 
-.section1 #contact-info {
 
-}
 .section1 .fa {
   margin-right: 10px;
 }
@@ -150,10 +179,14 @@ md-nav-bar {
   max-width: 300px;
 }
 
+@media (min-width: 960px) {
+
+
 .page-content {
   background:transparent;
   margin-left:10vw;
   width:50vw
+}
 }
 
 .body-text {

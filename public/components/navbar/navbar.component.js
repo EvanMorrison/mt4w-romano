@@ -2,15 +2,16 @@
 
   angular.module("Navbar", [])
   .component('navbar', {
-    templateUrl: '/components/navbar/navbar.template.html',
-    controller: ['$scope', navbarController]
+    templateUrl: 'components/navbar/navbar.template.html',
+    controller: ['$mdSidenav', NavbarController],
+    controllerAs: 'ctrl'
   });
 
-  function navbarController($scope) {
+  function NavbarController($mdSidenav) {
     const ctrl = this;
-    $scope.currentNavItem = 'about';
-    function goto(name) {
-      console.log('current nav item ', $scope.currentNavItem)
+    ctrl.toggleNav = function() {
+        console.log('toggling')
+        $mdSidenav('left').toggle();
     }
   }
 
