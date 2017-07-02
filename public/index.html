@@ -12,33 +12,38 @@
 
     <title>Manual Therapy for Wellness</title>
 <!-- Vendor Scripts -->
-    <script src="./node_modules/angular/angular.min.js"></script>
-    <script src="./node_modules/angular-animate/angular-animate.min.js"></script>
-    <script src="./node_modules/angular-aria/angular-aria.min.js"></script>
-    <script src="./node_modules/angular-messages/angular-messages.min.js"></script>
-    <script src="./node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
-    <script src="./node_modules/angular-material/angular-material.min.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
 
-    <link rel="stylesheet" href="./node_modules/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
     <script src="https://use.fontawesome.com/dc76fbddb7.js"></script>
     <link rel="stylesheet" href="style.css">
     <base href="/">
   </head>
   <body ng-cloak>
-    <navbar ng-include="'components/navbar/navbar.template.html'" >  </navbar>
-    <div id="bg-logo"></div>
-    <ui-view></ui-view>
-    <!--<ui-view name='main-content'></ui-view>-->
+    
+    <div ui-view="navbar"></div>
+    <div ng-cloak class="bg-logo-container" >
+        <img id="bg-logo" ng-src="http://i.imgur.com/EvXAyE1.png" alt="">
+    </div>
+    <div ui-view="contentContainer"></div>
   </body>
 
 
   <!-- Local Components -->
-  <script src="./app.module.js"></script>
-  <script src="./app.config.js"></script>
-  <script src="./components/navbar/navbar.component.js"></script>
-  <script src="./components/home/home.component.js"></script>
-  <script src="./components/about/about.component.js"></script>
-  <script src="./components/services/services.component.js"></script>
-  <script src="./components/scheduling/scheduling.component.js"></script>
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+  <script src="components/navbar/navbar.component.js"></script>
+  <script src="components/navbar/navLinks.component.js"></script>
+  <script src="components/contentContainer/contentContainer.component.js"></script>
+  <script src="components/home/home.component.js"></script>
+  <script src="components/about/about.component.js"></script>
+  <script src="components/services/services.component.js"></script>
+  <script src="components/scheduling/scheduling.component.js"></script>
 
 </html>
