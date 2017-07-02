@@ -2,7 +2,7 @@
 
   angular.module('Home', [])
   .component('home', {
-    templateUrl: '/components/home/home.template.html',
+    templateUrl: 'components/home/home.template.html',
     controller: HomeController
   });
 

@@ -1,18 +1,47 @@
-<md-nav-bar
-      md-selected-nav-item="currentNavItem"
-      nav-bar-aria-label="navagation links">
-    <img class="nav-logo" ng-src="http://i.imgur.com/nmJChXB.png" alt="">
-    <!--<img class="nav-logo" ng-src="http://i.imgur.com/nzQgYC8.png" alt="">-->
-    <md-nav-item md-nav-href="home" name="home">
-      Home
-    </md-nav-item>
-    <md-nav-item md-nav-href="services" name="services-pricing">
-      Services &amp; Pricing
-    </md-nav-item>
-    <md-nav-item md-nav-href="about" name="about">
-      About Us
-    </md-nav-item>
-    <md-nav-item md-nav-href="appointments" name="appointments">
-      Scheduling an Appointment
-    </md-nav-item>
-</md-nav-bar>
+<div >
+  
+  <!-- Navbar for larger screens -->
+  <md-toolbar   hide-xs hide-sm 
+                class="md-toolbar-tools"  
+                md-whiteframe="4"
+                md-colors="{background: 'default-background'}"
+            >
+      <div flex="10" layout="column" layout-align="center center"> 
+          <img  md-colors="{background: 'alt-background'}"
+                class="nav-logo" 
+                ng-src="http://i.imgur.com/EvXAyE1.png" alt="">
+      </div>
+      <navbar-links> </navbar-links>
+  </md-toolbar>
+  <!-- End navbar for large screens -->
+
+
+    <!-- Navbar with sidebar for small screens-->
+    <div layout="column" md-whiteframe="4" hide-gt-sm md-theme="alt">
+      <md-toolbar hide-gt-sm >
+          <md-button class="md-icon-button" ng-click="ctrl.toggleNav()">
+            <md-icon>menu</md-icon>
+          </md-button>
+      </md-toolbar>
+
+      <md-sidenav md-component-id="left" class="md-sidenav-left">
+          <md-toolbar class="md-tall padding" >
+            <div flex layout="column" layout-align="center center"> 
+          <img  
+                class="nav-logo" 
+                ng-src="http://i.imgur.com/EvXAyE1.png" alt="">
+            <div class="md-headline">Manual Therapy for Wellness</div>
+        </div>
+          </md-toolbar>
+          <md-content>
+            <navbar-links on-change="ctrl.toggleNav()"></navbar-links>
+          </md-content>
+        </md-sidenav>
+
+      </div>
+      
+      <div >
+      </div>
+    </div>
+
+</div>
