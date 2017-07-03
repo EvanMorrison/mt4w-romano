@@ -2,66 +2,193 @@
 
 * body {
   background-color: transparent;
+  overflow-x: hidden;
 }
 
+/********************/
+/* Navbar styling */
 .nav-logo {
   width: 56px;
   border: 1px solid transparent;
   border-radius: 28px;
+  box-shadow: 1px 1px 1px 0px #555;
+  background: rgba(0,150,0,.5);
 }
 
 .navbar .active {
   border-bottom: 2px solid red;
 }
 
-/* styling for background logo
-    for an empty div with id=bg-logo  */
- #bg-logo {
-  position: absolute;
-  height:20vw;
-  width:20vw;
-  max-width: 500px;
-  top: 80px;
-  right: 10vw;
-  opacity: 0.8;
-  
-}
 
-@media (max-width: 959px) {
 
-  .page-heading.hero {
-    background-position: center top !important ;
-  }
-  
-
-  .bg-logo-container {
-    position: absolute;
-    top: -30px;
-    right: -11vw;
-    opacity: .1;
-  }
-  #bg-logo {
-    width: 50vw;
-    height: auto;
-  }
-  .section1 {
-    margin-right: 5vw;
-  }
-  .page-content {
-    margin-left: 10vw;
-    max-width: 80vw;
-    z-index: -1
-  }
-}
+/* hero image styling */
 
 .page-heading.hero {
+  position:relative;
   height: 100vh;
-  background: url('http://i.imgur.com/anspE3W.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+}
 
+.page-heading.hero::before {
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  /* dragonfly photo */
+  background:  url('http://i.imgur.com/anspE3W.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  /*filter: blur(2px);*/
+}
+
+    /* text appearing over hero image */
+.hero-title-block {
+  position:relative;
+  display: block;
+  top: 0;
+  padding: 20px 50px;
+}
+
+  /* translucent background for text */
+.hero-title-block::before {
+  background: linear-gradient(to bottom, rgba(255,250,255,.5), rgba(255,255,255,0.2)), 
+              linear-gradient(to right, rgba(255,250,255,.5), rgba(255,255,255,0));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: ' ';
+  border: 1px transparent;
+  border-radius: 10px;
+  filter: blur(10px);
+  opacity: 1;
+  z-index: -1;
+}
+
+.hero-title-block h1 {
+  display: inline-block;
+  margin: 0;
+}
+
+/* placement of the logo */
+.hero-title-block::after {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  content: ' ';
+  /* logo image */
+  background: url("http://i.imgur.com/EvXAyE1.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 105%;
+  background-color: rgba(100,100,50,.2);
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+  border: 1px transparent;
+  border-radius: 100px;
+  transition: .5s;
 
 }
+
+/**************************/
+/* media queries for home page header logos*/
+/*************************/
+
+ /*media query for small screens */
+@media only screen and (max-width: 440px) {
+  .hero-title-block::after {
+    transform: scale(.5);
+    right: -10vw;
+    transition: .5s;
+  }
+}
+
+@media only screen and (min-width: 441px) and (max-width: 959px) {
+      
+      .hero-title-block::after {
+        background-size: 105%;
+        background-color: rgba(100,100,50,.2);
+        width: 200px;
+        height: 200px;
+        z-index: -1;
+        border: 1px transparent;
+        border-radius: 100px;
+        transform: scale(0.75);
+        transition: .5s;
+      }
+
+}
+ /*end media query for homepage and small screens */
+
+
+/*********************
+/* logo displayed on side of every page other than home page */
+.side-content {
+  position: absolute;
+  display: inline-block;
+  /* logo image */
+  background: url("http://i.imgur.com/EvXAyE1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+
+}
+
+/**********/
+/* media queries for views other than home page*/
+@media only screen and (max-width: 959px) {
+   /* styling for content on non-home pages */
+     md-content.page-content {
+        background: rgba(255,255,255,.5);
+      }
+      .page-content {
+        overflow: hidden;
+        margin-left: 10vw;
+        max-width: 80vw;
+        z-index: -1
+      }
+
+      /* styling for side content on non-home pages*/
+      .side-content {
+        top: 150px;
+        right: 0;
+        min-width: 400px;
+        min-height: 400px;
+        width: 50vw;
+        height: 50vw;
+        z-index: -2;
+        opacity: .2;
+      }
+}
+
+/* media query for larger screens */
+@media only screen and (min-width: 960px) {
+
+  .page-content {
+    overflow: hidden;
+    margin-left:10vw;
+    width:50vw
+  }
+
+  .side-content {
+    top: 150px;
+    right:10px;
+    max-width: 500px;
+    width: 30vw;
+    height: 30vw;
+    opacity: .4;
+    /*animation: spinner infinite 5s linear;*/
+  }
+
+  @keyframes spinner {
+    from {transform: rotate(0deg); }
+    to {transform: rotate(360deg); }
+  }
+}
+ /*end media query */
 
 .page-heading {
   font-family: 'Poiret One', 'Open Sans', 'Helvetica Neue', 'sans-serif';
@@ -77,15 +204,15 @@
 }
 
 .page-heading h1 {
-  margin: 0 15vw;
-  width: 50vw;
+  /*margin: 0 15vw;*/
+  /*width: 50vw;*/
   color: #222;
   font-size: 4em;
-  padding: 30px 10px 0px 0;
+  padding: 0px 10px 0px 0;
 }
 
 #subheading {
-  margin: 0 0 0 15vw;
+  /*margin: 0 0 0 15vw;*/
   font-family: 'Open Sans', 'Helvetica Neue';
   border-top: 1px solid #222;
   width: 45vw;
@@ -101,8 +228,9 @@
   font-size: 14px;
 }
 
+
 .section1 {
-  margin: 0 0 0 15vw;
+  margin: 0 0 100px 15vw;
   color: #222;
   padding: 110px 10px 80px;
 }
@@ -125,27 +253,34 @@
   position:relative;
   margin: 0;
   padding: 0 0 100px;
+  background: rgba(56,25,4,.4)
+
   
 }
 
-.section2>h3 {
-  text-align: center;
+.section2 .header {
+  position: relative;
   padding: 0 0 20px;
   margin: 0;
-  height: 100px;
-
-  background-image: url('http://i.imgur.com/lO70yjz.png');
+  height: 150px;
+    /* image of location */
+  background: url('http://i.imgur.com/bk8g5t0.jpg'), linear-gradient(rgba(56,25,4,.4), rgba(56,25,4,.4));
   background-repeat: no-repeat;
-  background-size: 900px 500px;
-  background-position-y: -150px;
+  background-size: 725px, cover;
+  background-position-y: -80px, center;
   background-position-x: center;
 }
 
+
 .section2 a {
-  font-size: 20px;
-  color: rgba(0,77,64 ,1);
+  /*font-size: 20px;*/
+  color: #555;
   text-shadow: 1px 1px 3px #444;
   text-decoration: none ;
+  display: block;
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
 }
 
 .map {
@@ -160,35 +295,7 @@
   margin: 25px 30px 20px -200px;
 }
 
-
-.logo-banner {
-  background-color: #111;
-  max-height: 500px;
-  margin: 30px 0;
-  padding: 15px 0;
-}
-
-.logo {
-  position: relative;
-  background-color: #111;
-  border: 1px transparent;
-  border-radius: 100px;
-  margin-left:50vw;
-  left: -150px;
-  width:50vw;
-  max-width: 300px;
-}
-
-@media (min-width: 960px) {
-
-
-.page-content {
-  background:transparent;
-  margin-left:10vw;
-  width:50vw
-}
-}
-
+ 
 .body-text {
   font-family: 'Open Sans', 'Helvetica Neue', 'sans serif';
   font-size: 16px;

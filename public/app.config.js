@@ -36,25 +36,33 @@
               'contentContainer@': {component: 'home'}
             }
           })
-          .state('about', {
-            parent: 'main',
-            url: 'about',
+          .state('layout', {
+            url: '',
+            parent: 'main', 
             views: {
-              'contentContainer@': {component: 'about'}
+              'contentContainer@': { templateUrl: 'components/layout/viewLayout.template.html'}
             }
           })
+          .state('about', {
+            url: 'about',
+            parent: 'layout',
+            views: {
+              '@layout': { component: 'about' }
+          }
+            
+          })
           .state('services', {
-            parent: 'main',
+            parent: 'layout',
             url: 'services',
             views: { 
-              'contentContainer@': {component: 'services'}
+              '@layout': {component: 'services'}
           }
           })
           .state('appointments', {
-            parent: 'main',
+            parent: 'layout',
             url: 'appointments',
             views: {
-              'contentContainer@': {component: 'scheduling'}
+              '@layout': {component: 'scheduling'}
           }
           })
 
