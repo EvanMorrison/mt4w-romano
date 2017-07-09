@@ -11,8 +11,7 @@
   width: 56px;
   border: 1px solid transparent;
   border-radius: 28px;
-  box-shadow: 1px 1px 1px 0px #555;
-  background: rgba(0,150,0,.5);
+  /*background: rgba(100,100,100,1);*/
 }
 
 .navbar .active {
@@ -79,7 +78,8 @@
   right: 10px;
   content: ' ';
   /* logo image */
-  background: url("http://i.imgur.com/EvXAyE1.png");
+  background: url("http://i.imgur.com/kBPmg0K.png");
+  /*background: url("http://i.imgur.com/EvXAyE1.png");*/
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 105%;
@@ -103,6 +103,7 @@
     transform: scale(.5);
     right: -10vw;
     transition: .5s;
+    z-index: -1;
   }
 }
 
@@ -130,7 +131,7 @@
   position: absolute;
   display: inline-block;
   /* logo image */
-  background: url("http://i.imgur.com/EvXAyE1.png");
+  background: url("http://i.imgur.com/kBPmg0K.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -138,8 +139,14 @@
 }
 
 /**********/
-/* media queries for views other than home page*/
+/* media queries for all small screens */
 @media only screen and (max-width: 959px) {
+
+    section.section1 {
+      margin-left: 5vw;
+      width: 90vw;
+    }
+  
    /* styling for content on non-home pages */
      md-content.page-content {
         background: rgba(255,255,255,.5);
@@ -180,13 +187,9 @@
     width: 30vw;
     height: 30vw;
     opacity: .4;
-    /*animation: spinner infinite 5s linear;*/
   }
 
-  @keyframes spinner {
-    from {transform: rotate(0deg); }
-    to {transform: rotate(360deg); }
-  }
+  
 }
  /*end media query */
 
@@ -204,8 +207,6 @@
 }
 
 .page-heading h1 {
-  /*margin: 0 15vw;*/
-  /*width: 50vw;*/
   color: #222;
   font-size: 4em;
   padding: 0px 10px 0px 0;
