@@ -26,9 +26,8 @@ module.exports = {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' },
       { test: /\.html$/, exclude: /node_modules/, use: 'raw-loader' },
-      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-      { test: /\.(jpe?g|png|gif)$/, exclude: /node_modules/, 
-        use: 'file-loader?name=assets/[hash].[ext]'}
+      { test: /\.(jpe?g|png|gif)$/, exclude: /node_modules/, use: 'file-loader?name=assets/[hash].[ext]'},
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] }
     ]
   },
 
