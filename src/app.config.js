@@ -1,19 +1,16 @@
-(function() {
 
-  angular
-    .module('MTWApp')
+module.exports = function(ngModule) {
 
-    .config(function($mdThemingProvider){
+  ngModule
+
+    .config(['$mdThemingProvider', function($mdThemingProvider){
       $mdThemingProvider.theme('default')
         .primaryPalette('indigo')
       $mdThemingProvider.theme('alt')
         .primaryPalette('light-green')
         .accentPalette('purple')
         .warnPalette('red')
-
-      
-      
-    })
+    }])
 
     .config(['$locationProvider', '$stateProvider', '$urlRouterProvider',
       function config($locationProvider, $stateProvider, $urlRouterProvider) {
@@ -40,7 +37,7 @@
             url: '',
             parent: 'main', 
             views: {
-              'contentContainer@': { templateUrl: 'components/layout/viewLayout.template.html'}
+              'contentContainer@': { template: require('./components/layout/viewLayout.template.html')}
             }
           })
           .state('about', {
@@ -70,4 +67,4 @@
       }
     ])
 
-})();
+}
