@@ -1,9 +1,9 @@
-(function() {
-
-  angular.module('Services', [])
+module.exports = function(ngModule) {
+  ngModule
     .component('services', {
-      templateUrl: '/components/services/services.template.html',
-      controller: [ServicesController]
+      template: require('./services.template.html'),
+      controller: [ServicesController],
+      controllerAs: 'ctrl'
     });
 
     function ServicesController() {
@@ -11,4 +11,4 @@
       ctrl.content= 'Manual Therapy for Wellness provides several services at compentetive rates that provide synergistic benefits, relief from pain and stress, improved mobility, strengthened immune system, and reduction of swelling.'
     }
 
-})();
+}

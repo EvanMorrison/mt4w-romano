@@ -1,8 +1,7 @@
-(function() {
-
-  angular.module('Navbar')
+module.exports = function(ngModule) {
+  ngModule
     .component('navbarLinks', {
-      templateUrl: 'components/navbar/navLinks.template.html',
+      template: require('./navLinks.template.html'),
       controller: [NavLinkController],
       controllerAs: 'ctrl',
       bindings: { onChange: '&' }
@@ -36,4 +35,4 @@
     }
 
 
-}())
+}
