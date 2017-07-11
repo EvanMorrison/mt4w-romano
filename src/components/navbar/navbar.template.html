@@ -4,7 +4,8 @@
   <md-toolbar   hide-xs hide-sm 
                 class="md-toolbar-tools"  
                 md-whiteframe="4"
-                md-colors="{background: 'alt-primary'}"
+                md-theme="default"
+                
             >
       <div flex="10" layout="column" layout-align="center center"> 
          <img  
@@ -18,7 +19,7 @@
 
     <!-- Navbar with sidebar for small screens-->
     <div layout="column" md-whiteframe="4" hide-gt-sm md-theme="alt">
-      <md-toolbar hide-gt-sm >
+      <md-toolbar hide-gt-sm class="md-toolbar-tools">
           <md-button class="md-icon-button" ng-click="ctrl.toggleNav()">
             <i class="fa fa-bars fa-2x"></i>
           </md-button>

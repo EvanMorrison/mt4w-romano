@@ -3,6 +3,7 @@
 body h1 h2 h3 h4 h5 h6 p div section {
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', 'Helvetica Neue';
 }
 
 * body {
@@ -46,9 +47,9 @@ body h1 h2 h3 h4 h5 h6 p div section {
   width: 100vw;
     /* logo image */
   background: url("http://i.imgur.com/4EtfSVw.png");
-  background-size: 66vh;
+  background-size: 75vh;
   background-repeat: no-repeat;
-  background-position: center right 25px;
+  background-position: center center;
   z-index: 1;
 }
 .homepage-hero::after {
@@ -70,10 +71,11 @@ body h1 h2 h3 h4 h5 h6 p div section {
 .hero-title-block {
   position:absolute;
   display: block;
-  top: 150px;
-  left: 10%;
-  /*transform: translate(-50%, -50%);*/
-  width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 95%;
   margin: 0 auto;
   z-index: 10;
 }
@@ -82,16 +84,16 @@ body h1 h2 h3 h4 h5 h6 p div section {
 .hero-title-block::before {
   position: absolute;
   content: ' ';
-  background: radial-gradient( rgba(255,255,255,.9), rgba(255,255,255,.9));
+  background: radial-gradient( rgba(255,255,255,.8), rgba(255,255,255,0));
   /*filter: blur(3px);*/
   top: -5%;
   left: -5%;
   width: 110%;
   height: 110%;
   border: 1px transparent;
-  border-radius: 10px;
-  opacity: .7;
-  filter: blur(2px);
+  border-radius: 100px;
+  opacity: 1;
+  filter: blur(10px);
   z-index: -1;
 }
 
@@ -102,6 +104,7 @@ body h1 h2 h3 h4 h5 h6 p div section {
   padding: 0;
   text-align: center;
   color: #000;
+  font-weight: 800;
   z-index: 10;
 }
 
@@ -114,7 +117,7 @@ body h1 h2 h3 h4 h5 h6 p div section {
   text-align: center;
   border-top: 1px solid #000;
   color: #000;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .hero-title-block .subtitle-dot-separator {
@@ -135,6 +138,7 @@ body h1 h2 h3 h4 h5 h6 p div section {
 .section1>* {
   padding: 0 0 0 15vw;
   margin: 0;
+  font-family: 'Open Sans'
 }
 
 
@@ -195,32 +199,6 @@ body h1 h2 h3 h4 h5 h6 p div section {
 /* End base Homepage Styling */
 
 
-/**************************/
-/* media queries for home page header logos*/
-/*************************/
-
- /*media query for small screens */
-@media only screen and (max-width: 440px) {
-  /* .hero-title-block::after {
-    transform: scale(.5);
-    right: -10vw;
-    transition: .5s;
-    z-index: -1;
-  } */
-}
-
-@media only screen and (min-width: 441px) and (max-width: 959px) {
-      
-      /* .hero-title-block::after {
-        width: 200px;
-        height: 200px;
-        z-index: -1;
-        transition: .5s;
-      } */
-
-}
- /*end media query for homepage and small screens */
-
 
 /*********************
 /* logo displayed on side of every page other than home page */
@@ -228,7 +206,7 @@ body h1 h2 h3 h4 h5 h6 p div section {
   position: absolute;
   display: inline-block;
   /* logo image */
-  background: url("http://i.imgur.com/kBPmg0K.png");
+  background: url("http://i.imgur.com/4EtfSVw.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -239,8 +217,13 @@ body h1 h2 h3 h4 h5 h6 p div section {
 /* media queries for all small screens */
 @media only screen and (max-width: 959px) {
 
+    md-toolbar.md-toolbar-tools {
+      min-height: 64px;
+    }
+
     section.section1>* {
-      margin-left: 5vw;
+      margin-left: 0;
+      padding-left: 5vw;
     }
   
    /* styling for content on non-home pages */
