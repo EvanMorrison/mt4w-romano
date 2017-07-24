@@ -6,6 +6,6 @@ firebase.json
 
 node_modules
 dist
-
+images
 *.log
 

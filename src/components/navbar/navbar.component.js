@@ -4,15 +4,17 @@ module.exports = function(ngModule) {
       .component('navbar', {
         template: require('./navbar.template.html'),
         controller: ['$mdSidenav', NavbarController],
-        controllerAs: 'ctrl'
+        controllerAs: 'vm'
       });
 
       function NavbarController($mdSidenav) {
-        const ctrl = this;
-        ctrl.toggleNav = function() {
+        const vm = this;
+        vm.toggleNav = function() {
             console.log('toggling')
             $mdSidenav('left').toggle();
         }
+
+          vm.logoImg = require('../../assets/MTW logo 14 600x587.png');
       }
 
 }

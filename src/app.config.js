@@ -5,9 +5,9 @@ module.exports = function(ngModule) {
 
     .config(['$mdThemingProvider', function($mdThemingProvider){
       $mdThemingProvider.theme('default')
-        .primaryPalette('light-green')
+        .primaryPalette('indigo')
       $mdThemingProvider.theme('alt')
-        .primaryPalette('light-green')
+        .primaryPalette('cyan')
         .accentPalette('purple')
         .warnPalette('red')
     }])
