@@ -9,7 +9,7 @@
       <div flex="10" layout="column" layout-align="center center"> 
          <img  
                class="nav-logo" 
-               ng-src="http://i.imgur.com/4EtfSVw.png" alt="">
+               ng-src="{{vm.logoImg}}" alt="">
       </div>
       <navbar-links> </navbar-links>
   </md-toolbar>
@@ -19,7 +19,7 @@
     <!-- Navbar with sidebar for small screens-->
     <div layout="column" md-whiteframe="4" hide-gt-sm md-theme="alt">
       <md-toolbar hide-gt-sm >
-          <md-button class="md-icon-button" ng-click="ctrl.toggleNav()">
+          <md-button class="md-icon-button" ng-click="vm.toggleNav()">
             <i class="fa fa-bars fa-2x"></i>
           </md-button>
       </md-toolbar>
@@ -29,12 +29,12 @@
             <div flex layout="column" layout-align="center center"> 
           <img  
                 class="nav-logo" 
-                ng-src="http://i.imgur.com/kBPmg0K.png" alt="">
+                ng-src="{{vm.logoImg}}" alt="">
             <div class="md-headline">Manual Therapy for Wellness</div>
         </div>
           </md-toolbar>
           <md-content>
-            <navbar-links on-change="ctrl.toggleNav()"></navbar-links>
+            <navbar-links on-change="vm.toggleNav()"></navbar-links>
           </md-content>
         </md-sidenav>
 

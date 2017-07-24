@@ -78,8 +78,7 @@
   right: 10px;
   content: ' ';
   /* logo image */
-  background: url("http://i.imgur.com/4EtfSVw.png");
-  /*background: url("http://i.imgur.com/EvXAyE1.png");*/
+  background: url("./assets/MTW logo 14 600x587.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 105%;
@@ -131,7 +130,7 @@
   position: absolute;
   display: inline-block;
   /* logo image */
-  background: url("http://i.imgur.com/4EtfSVw.png");
+  background: url("./assets/MTW logo 14 600x587.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
