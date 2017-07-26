@@ -1,7 +1,12 @@
 .DS_Store
 
-node_modules
+#firebase
 .firebaserc
 firebase.json
+
+node_modules
+dist
+images
+assets
 *.log
 
