@@ -2,17 +2,20 @@
   
   <!-- Navbar for larger screens -->
   <md-toolbar   hide-xs hide-sm 
-                class="md-toolbar-tools main-navbar nav"  
+                class="main-navbar nav md-tall"  
                 md-whiteframe="2"
-                md-theme="alt"
-                
-            >
-      <div flex="10" layout="column" layout-align="center center"> 
-         <img  
-               class="nav-logo" 
-               ng-src="{{vm.logoImg}}" alt="">
+                md-theme="alt">
+      <div layout="row" layout-align="space-between end" flex>
+        <div class="nav brand-group" layout="row">
+        <img  class="nav brand-logo" 
+                 ng-src="{{vm.logoImg}}" alt="">
+          <div class="nav brand-name-group">
+            <h1 >Manual Therapy</h1>
+            <h1 >for Wellness</h1>
+          </div>
+        </div>
+        <navbar-links> </navbar-links>
       </div>
-      <navbar-links> </navbar-links>
   </md-toolbar>
   <!-- End navbar for large screens -->
 
@@ -20,19 +23,21 @@
     <!-- Navbar with sidebar for small screens-->
     <div layout="column" md-whiteframe="4" hide-gt-sm>
       <md-toolbar hide-gt-sm class="md-toolbar-tools main-navbar nav"
-                  md-theme="alt">
+                  md-theme="default">
           <md-button class="md-icon-button nav-button" ng-click="vm.toggleNav($event)">
             <i class="fa fa-bars fa-2x"></i>
           </md-button>
+          <div class="nav brand-name-group alt-font blue">
+            <h1>Manual Therapy for Wellness</h1>
+          </div>
       </md-toolbar>
 
       <md-sidenav md-component-id="left" class="md-sidenav-left">
           <md-toolbar class="md-tall padding" >
             <div flex layout="column" layout-align="center center"> 
-          <img  
-                class="nav-logo" 
+          <img  class="nav brand-logo" 
                 ng-src="{{vm.logoImg}}" alt="">
-            <div class="md-headline">Manual Therapy for Wellness</div>
+            <div class="md-headline" style="text-align:center">Manual Therapy for Wellness</div>
         </div>
           </md-toolbar>
           <md-content>

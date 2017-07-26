@@ -1,5 +1,6 @@
 import './style.css';
 import './animate.css';
+import './style-media.css';
 
 const app = angular.module('MTWApp', [
                                         'ngMaterial',
