@@ -7,8 +7,12 @@ body, h1, h2, h3, h4, h5, h6, p, div, section {
   font-family: 'Open Sans', 'Helvetica Neue';
 }
 
-html {
+html, body {
   overflow-x: hidden;
+}
+
+* {
+  transition: .5s;
 }
 
 /********************/
@@ -58,7 +62,6 @@ md-toolbar.main-navbar.nav {
   flex-flow: row wrap;
   justify-content: space-around;
   height: 700px;
-  /* height: calc(100vh - 128px); */
   background-color: transparent;
   z-index: 1;
   transition: .3s;
@@ -80,6 +83,7 @@ md-toolbar.main-navbar.nav {
   background-position: center center;
   opacity: 1;
   z-index: 1;
+  transition: .5s;
 }
 .hero.hero-container::after {
   position: absolute;

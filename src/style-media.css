@@ -12,18 +12,24 @@
     .hero.hero-aside-box {
       display: none;
     }
+    
+    section.section1>* {
+      margin-left: 0;
+      padding-left: 5vw;
+    }
 
     .page-content{
       width: 90%;
       margin: 0 auto;
     }
+    
 }
 
 @media only screen and (max-width: 959px) and (min-width: 731px) {
 
     section.section1>* {
       margin-left: 0;
-      padding-left: 5vw;
+      padding-left: 10vw;
     }
 
   
@@ -86,7 +92,7 @@
   }
 
   .hero.title-text {
-    width: 100%;
+    width: auto;
   }
     .hero.subtitle {
       width: 100%;
