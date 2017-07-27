@@ -1,5 +1,5 @@
 const path = require('path');
-
+const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -12,13 +12,21 @@ module.exports = (env = {}) => {
   return    {
 
       entry: {
-        vendor: './src/vendor.js',
-        index: './src/app.module.js'
+        index: './src/app.module.js',
+        vendor: [
+          'angular', 
+          'angular-material', 
+          '@uirouter/angularjs', 
+          './node_modules/angular-material/angular-material.min.css'
+        ]
       },
 
       output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js'
+        filename: (() => {
+            if (isProduction) return '[name].[chunkhash].js';
+            else return '[name].bundle.js';
+        })()
       },
 
       devtool: (() => {
@@ -73,6 +81,13 @@ module.exports = (env = {}) => {
           if (isProduction) {
             pluginList.push(
               new CleanWebpackPlugin(['dist']),
+              new webpack.HashedModuleIdsPlugin(),
+              new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor'
+              }),
+              new webpack.optimize.CommonsChunkPlugin({
+                name: 'runtime'
+              }),
               new ExtractTextPlugin({
                 filename: '[name].[contenthash].css'
               }),
