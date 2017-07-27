@@ -11,9 +11,6 @@ html, body {
   overflow-x: hidden;
 }
 
-* {
-  transition: .5s;
-}
 
 /********************/
 /* Navbar styling */
@@ -110,6 +107,7 @@ md-toolbar.main-navbar.nav {
   /* min-width: 600px; */
   flex: 0 1 auto;
   z-index: 1;
+  transition: .3s;
 }
 
 .alt-font {
@@ -130,6 +128,7 @@ md-toolbar.main-navbar.nav {
   font-size: 3em;
   line-height: 1.25em;
   font-weight: 800;
+  transition: .3s;
 }
 
 
@@ -140,6 +139,7 @@ md-toolbar.main-navbar.nav {
   font-size: 2em;
   font-weight: 500;
   z-index: 1;
+  transition: .3s;
 }
 
 .hero.subtitle-text {
@@ -163,8 +163,8 @@ md-toolbar.main-navbar.nav {
 }
 
 .hero.subtitle p:hover {
-  font-size: 1.1em;
-  transition: .5s;
+  font-size: 1.15em;
+  transition: .3s;
 }
 
 /* chevrons for list items  */
@@ -226,7 +226,8 @@ md-toolbar.main-navbar.nav {
 .section1>* {
   padding: 0 0 0 15vw;
   margin: 0;
-  font-family: 'Open Sans'
+  font-family: 'Open Sans';
+  transition: .3s;
 }
 
 
