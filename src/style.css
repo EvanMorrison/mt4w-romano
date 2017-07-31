@@ -349,12 +349,6 @@ md-toolbar.main-navbar.nav {
 .bold {
   font-weight: 700;
 }
-
-
-
-
-
-
  
 .body-text {
   font-family: 'Open Sans', 'Helvetica Neue', 'sans serif';
@@ -362,13 +356,8 @@ md-toolbar.main-navbar.nav {
   text-align: justify;
 }
 
-#email-form {
-  border: 1px transparent;
-  border-radius: 5px;
-  padding: 20px;
-  font-weight: 400;
-  background-color: rgba(173,193,240,.2);
-
+.email-form-card {
+   margin: 50px 1px; 
+  max-width: 550px;
 }
-
 

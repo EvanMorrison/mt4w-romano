@@ -4,6 +4,8 @@ import './style-media.css';
 
 const app = angular.module('MTWApp', [
                                         'ngMaterial',
+                                        'ngMessages',
+                                        'ngResource',
                                         'ui.router'
                                       ]);
 

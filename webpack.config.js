@@ -16,6 +16,8 @@ module.exports = (env = {}) => {
         vendor: [
           'angular', 
           'angular-material', 
+          'angular-resource',
+          'angular-messages',
           '@uirouter/angularjs', 
           './node_modules/angular-material/angular-material.min.css'
         ]
