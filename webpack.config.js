@@ -19,7 +19,7 @@ module.exports = (env = {}) => {
           'angular-resource',
           'angular-messages',
           '@uirouter/angularjs', 
-          './node_modules/angular-material/angular-material.min.css'
+          './node_modules/angular-material/angular-material.scss'
         ]
       },
 
@@ -58,13 +58,14 @@ module.exports = (env = {}) => {
                       }
                   }]
           },
-          { test: /\.css$/, 
+          { test: /\.(scss)$/, 
             use: (() => {
                   if (isProduction) return ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: 'css-loader?sourceMap'
+                    use: ['css-loader?sourceMap', 'sass-loader?sourceMap'
+                    ]
                   });
-                  else return ['style-loader', 'css-loader']
+                  else return ['style-loader', 'css-loader', 'sass-loader']
             })()
           }   
         ]
