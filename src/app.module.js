@@ -1,8 +1,11 @@
-import './style.css';
-import './animate.css';
+import './style.scss';
+import './animate.scss';
+import './styleMedia.scss';
 
 const app = angular.module('MTWApp', [
                                         'ngMaterial',
+                                        'ngMessages',
+                                        'ngResource',
                                         'ui.router'
                                       ]);
 

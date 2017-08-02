@@ -5,7 +5,7 @@ module.exports = function(ngModule) {
 
     .config(['$mdThemingProvider', function($mdThemingProvider){
       $mdThemingProvider.theme('default')
-        .primaryPalette('indigo')
+        .primaryPalette('blue')
       $mdThemingProvider.theme('alt')
         .primaryPalette('cyan')
         .accentPalette('purple')
@@ -44,7 +44,7 @@ module.exports = function(ngModule) {
             url: 'about',
             parent: 'layout',
             views: {
-              '@layout': { component: 'about' }
+              'primaryContent@layout': { component: 'about' }
           }
             
           })
@@ -52,14 +52,14 @@ module.exports = function(ngModule) {
             parent: 'layout',
             url: 'services',
             views: { 
-              '@layout': {component: 'services'}
+              'primaryContent@layout': {component: 'services'}
           }
           })
           .state('appointments', {
             parent: 'layout',
             url: 'appointments',
             views: {
-              '@layout': {component: 'scheduling'}
+              'primaryContent@layout': {component: 'scheduling'}
           }
           })
 
