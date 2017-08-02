@@ -3,14 +3,19 @@ module.exports = function(ngModule) {
   ngModule
       .component('navbar', {
         template: require('./navbar.template.html'),
-        controller: ['$mdSidenav', NavbarController],
+        controller: [ 
+                      '$mdSidenav',
+                      '$state',
+                      NavbarController
+                    ],
         controllerAs: 'vm'
       });
 
-      function NavbarController($mdSidenav) {
+      function NavbarController($mdSidenav, $state) {
         const vm = this;
-        vm.toggleNav = function() {
-            console.log('toggling')
+        vm.toggleNav = function($event) {
+            if ($event.target.text === 'Home') vm.athome = true;
+            else vm.athome = false;
             $mdSidenav('left').toggle();
         }
 

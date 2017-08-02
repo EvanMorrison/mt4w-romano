@@ -26,7 +26,7 @@ module.exports = function(ngModule) {
             state: 'about'
           },
           {
-            label: "Scheduling an Appointment",
+            label: "Make an Appointment",
             state: 'appointments'
           }
          ]

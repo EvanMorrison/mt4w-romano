@@ -7,5 +7,6 @@ firebase.json
 node_modules
 dist
 images
+assets
 *.log
 
