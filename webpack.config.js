@@ -1,5 +1,5 @@
 const path = require('path');
-
+const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -12,13 +12,23 @@ module.exports = (env = {}) => {
   return    {
 
       entry: {
-        vendor: './src/vendor.js',
-        index: './src/app.module.js'
+        index: './src/app.module.js',
+        vendor: [
+          'angular', 
+          'angular-material', 
+          'angular-resource',
+          'angular-messages',
+          '@uirouter/angularjs', 
+          './node_modules/angular-material/angular-material.scss'
+        ]
       },
 
       output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js'
+        filename: (() => {
+            if (isProduction) return '[name].[chunkhash].js';
+            else return '[name].bundle.js';
+        })()
       },
 
       devtool: (() => {
@@ -48,13 +58,14 @@ module.exports = (env = {}) => {
                       }
                   }]
           },
-          { test: /\.css$/, 
+          { test: /\.(scss)$/, 
             use: (() => {
                   if (isProduction) return ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: 'css-loader?sourceMap'
+                    use: ['css-loader?sourceMap', 'sass-loader?sourceMap'
+                    ]
                   });
-                  else return ['style-loader', 'css-loader']
+                  else return ['style-loader', 'css-loader', 'sass-loader']
             })()
           }   
         ]
@@ -73,6 +84,13 @@ module.exports = (env = {}) => {
           if (isProduction) {
             pluginList.push(
               new CleanWebpackPlugin(['dist']),
+              new webpack.HashedModuleIdsPlugin(),
+              new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor'
+              }),
+              new webpack.optimize.CommonsChunkPlugin({
+                name: 'runtime'
+              }),
               new ExtractTextPlugin({
                 filename: '[name].[contenthash].css'
               }),

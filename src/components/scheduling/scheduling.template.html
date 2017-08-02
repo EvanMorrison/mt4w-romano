@@ -1,35 +1,85 @@
-<md-content class="page-content">
+<md-content class="page-content appointment-page">
 
   <h1 class="page-heading">
     Scheduling an Appointment
   </h1>
 
-  <p class="body-text">
-    Appointments are available seven days a week. We welcome new clients, please call or text 310-283-9382.
-  </p>
-  <!--<form name=userForm id="email-form">
-  <p class="body-text">
-    You can also ask any questions or request an appointmment by email.
-  </p>
-    <md-input-container>
-      <label>Subject</label>
-      <input type="text" name="subject" ng-model="subject">
-    </md-input-container>
-    <br>
-    <md-input-container>
-      <label>Your email address</label>
-      <input name="yourEmailAddress" required>
-       <div ng-messages="userForm.email.$error" ng-show="userform.email.$dirty">
-          <div ng-message="required">You must provide your email
-          </div>
-       </div>
-    </md-input-container>     
-    <md-input-container>
-      <label>Message</label>
-      <textarea name="message" id="" cols="60" rows="3" required></textarea>
-        <div ng-message="required">The message cannot be empty</div>
-    </md-input-container>
-    <md-button>Submit</md-button>
-  </form>-->
+  <div class="body-text">
+    <p>
+      Appointments are available seven days a week. Please contact us to schedule an appointment or to learn more:
+    </p>
+    <p>
+      Call or Text: <strong>310-283-9382</strong>
+    </p>
+    <p>
+      - or -
+    </p>
+    <p>
+      Email: <a href="mailto:trish@manualtherapy4wellness.com">trish@manualtherapy4wellness.com</a>
+    </p>
+  </div>
+  <md-card flex class="email-form-card">
+    <md-toolbar class="md-toolbar-tools">
+      <md-card-title ng-hide="vm.wasEmailSent">
+          Or send a message here:
+      </md-card-title>
+      <md-card-title ng-show="vm.wasEmailSent">
+          Message sent:
+      </md-card-title>
+    </md-toolbar>
+    <md-card-content>
+        <form class="email-form" 
+              name="emailForm"
+              ng-hide="vm.wasEmailSent">
+        <div layout="column">
+          <md-input-container>
+            <label>subject</label>
+            <input  
+                    type="text" 
+                    name="subject" 
+                    ng-model="vm.subject"
+                    maxlength="60">
+          </md-input-container>
+          <md-input-container>
+            <label>your email address</label>
+            <input  name="replyAddress" 
+                    type="email"
+                    ng-model="vm.replyAddress"
+                    md-no-asterisk
+                    required
+                    ng-pattern="/^.+@.+\..+$/">
+             <div ng-messages="emailForm.replyAddress.$error">
+                <div ng-message="required || pattern">You must provide a valid email to submit a message using this form.</div>
+             </div>
+          </md-input-container>     
+          <md-input-container>
+            <label>Message</label>
+            <textarea class="msg-body" 
+                      name="messageBody"
+                      required 
+                      md-no-asterisk
+                      maxlength="1000" 
+                      ng-model="vm.messageBody">
+            </textarea>
+              <div ng-messages="emailForm.messageBody.$error">
+                <div ng-message="required">Cannot submit an empty message</div>
+              </div>
+              <div ng-show="vm.messageBody"><small>{{vm.messageBody.length}}/1000</small></div>
+          </md-input-container>
+        </div>
+        <div>
+          <button  class="md-button md-raised md-primary email-submit-btn"
+                              ng-disabled="emailForm.$invalid"
+                              ng-click="vm.submitEmail($event)"
+                              type="submit">
+            Submit
+          </button>
+        </div>
+        </form>
+        <div ng-show="vm.wasEmailSent">
+          Thank You! Your message was sent. You should get a reply within one business day.
+        </div>
+    </md-card-content>
+  </md-card>
 
 </md-content>
