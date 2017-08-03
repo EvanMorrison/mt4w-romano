@@ -1,4 +1,5 @@
 
+
 @import url('https://fonts.googleapis.com/css?family=Philosopher|Open+Sans');
 
 //colors
@@ -26,8 +27,14 @@ body, h1, h2, h3, h4, h5, h6, p, div, section {
   font-family: $sans-font;
 }
 
-html, body {
+body {
   overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.below-nav {
+  position: relative;
+  top: 129px;
 }
 
 /********************/
@@ -38,17 +45,19 @@ html, body {
     align-self: center;
   }
   &.brand-logo {
-    width: 64px;
-    height: 64px;
+    width: 100px;
+    height: 100px;
     margin: 0 20px;
     display: inline-block;
     vertical-align: middle;
+    transition: .5s;
   }
   &.brand-name-group > * {
     font-family: $serif-font;
-    font-size: 28px;
+    font-size: 42px;
     font-weight: 400;
     color: $dark-blue;
+    transition: .5s;
   }
 }
 
@@ -57,11 +66,30 @@ html, body {
 }
 
 md-toolbar.main-navbar.nav {
+  position: fixed;
+  top: 0;
+  opacity: 1;
   background: $light-blue;
+  z-index: 10;
+  transition: .3s;
+}
+
+
+.nav-hide {
+  .main-navbar.nav {
+  top: -128px;
+  opacity: 0;
+  transition: .5s;
+  }
 }
 
 .nav-button {
   color: $dark-text;
+}
+
+.brand-logo-sidebar {
+  width: 64px;
+  height: 64px;
 }
 
 /****************************/
@@ -130,13 +158,12 @@ md-toolbar.main-navbar.nav {
   .hero-subtitle {
     position: absolute;
     top: 325px;
-    left: 350px;
-    left: calc(5% + 350px);
+    left: 40%;
     padding: 20px;
     p {
       font-size: 1em;
       &.sup {
-        font-size: 400%;
+        font-size: 300%;
         font-weight: 200;
         // color: $red; 
       }
@@ -147,7 +174,6 @@ md-toolbar.main-navbar.nav {
       }
       
       &:first-child {
-        // color: $dark-blue;
         color: $royal-blue;
       }
       &:nth-child(3) {
@@ -182,7 +208,7 @@ md-toolbar.main-navbar.nav {
       background: $light-blue;
       box-shadow: 0 1px 8px $dark-text;
       z-index: -2;
-      opacity: .4;
+      opacity: .7;
       transition: .5s;
     }
   }
@@ -346,3 +372,6 @@ md-toolbar.main-navbar.nav {
   margin: 50px 1px;
   max-width: 550px;
 }
+
+/*  media query styling */
+@import 'styleMedia';

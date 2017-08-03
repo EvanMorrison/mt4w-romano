@@ -59,14 +59,20 @@ module.exports = (env = {}) => {
                   }]
           },
           { test: /\.(scss)$/, 
-            use: (() => {
-                  if (isProduction) return ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader?sourceMap', 'sass-loader?sourceMap'
-                    ]
-                  });
-                  else return ['style-loader', 'css-loader', 'sass-loader']
-            })()
+            use: ExtractTextPlugin.extract({
+                    use: [{ 
+                        loader:'css-loader', options: {
+                            sourceMap: true
+                        }
+                        }, { 
+                        loader: 'sass-loader', options: {
+                            sourceMap: true
+                        }}
+                    ],
+                      // use style-loader in development
+                      fallback: 'style-loader'
+                  })
+                 
           }   
         ]
       },
@@ -78,7 +84,11 @@ module.exports = (env = {}) => {
                 template: path.resolve(__dirname, 'src/index.html'),
                 filename: 'index.html',
                 inject: 'body'
-            })
+            }),
+              new ExtractTextPlugin({
+                filename: '[name].[contenthash].css',
+                disable: !isProduction
+              })
         ];
           // plugins for production only
           if (isProduction) {
@@ -90,9 +100,6 @@ module.exports = (env = {}) => {
               }),
               new webpack.optimize.CommonsChunkPlugin({
                 name: 'runtime'
-              }),
-              new ExtractTextPlugin({
-                filename: '[name].[contenthash].css'
               }),
               new CompressionPlugin({
                 asset: "[path].gz[query]",

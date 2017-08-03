@@ -20,6 +20,7 @@ module.exports = function(ngModule) {
         }
 
           vm.logoImg = require('../../assets/MTW logo 14 600x587.png');
+
       }
 
 }

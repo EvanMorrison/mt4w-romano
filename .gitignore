@@ -4,9 +4,13 @@
 .firebaserc
 firebase.json
 
+favicon*
+
 node_modules
 dist
 images
 assets
 *.log
+
+
 
