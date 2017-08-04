@@ -32,21 +32,29 @@ body {
   overflow-y: scroll;
 }
 
-.below-nav {
-  position: relative;
-  top: 129px;
-}
+// .below-nav {
+//   position: relative;
+//   top: 129px;
+// }
 
 /********************/
 /* Navbar styling */
+md-toolbar.main-navbar.nav {
+  position: fixed;
+  top: 0;
+  opacity: .9;
+  background: $light-blue;
+  z-index: 10;
+  transition: .3s;
+}
 
 .nav {
   &.brand-group {
     align-self: center;
   }
   &.brand-logo {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     margin: 0 20px;
     display: inline-block;
     vertical-align: middle;
@@ -54,7 +62,7 @@ body {
   }
   &.brand-name-group > * {
     font-family: $serif-font;
-    font-size: 42px;
+    font-size: 38px;
     font-weight: 400;
     color: $dark-blue;
     transition: .5s;
@@ -64,16 +72,6 @@ body {
 .navbar .active {
   border-bottom: 2px solid red;
 }
-
-md-toolbar.main-navbar.nav {
-  position: fixed;
-  top: 0;
-  opacity: 1;
-  background: $light-blue;
-  z-index: 10;
-  transition: .3s;
-}
-
 
 .nav-hide {
   .main-navbar.nav {
@@ -99,13 +97,10 @@ md-toolbar.main-navbar.nav {
 /* hero image styling */
 
 .hero {
-  transition: .5s;
-  * {
-    transition: .5s;
-  }
+  overflow: hidden;
   &.hero-container {
     position: relative;
-    height: 700px;
+    height: 830px;
     background-color: transparent;
     z-index: 1;
     &::after {
@@ -133,14 +128,14 @@ md-toolbar.main-navbar.nav {
   }
   .hero-main-title {
     position: absolute;
-    top: 140px;
+    top: 240px;
     left: 0;
     right: 0;
     margin: auto;
     text-align: center;
     h1 {
       font-family: $serif-font;
-      font-size: 5em;
+      font-size: 3.5em;
       font-weight: 900;
       color: $white;
       text-transform: capitalize;
@@ -157,7 +152,7 @@ md-toolbar.main-navbar.nav {
   }
   .hero-subtitle {
     position: absolute;
-    top: 325px;
+    top: 445px;
     left: 40%;
     padding: 20px;
     p {
@@ -332,11 +327,17 @@ md-toolbar.main-navbar.nav {
 /*********************
 /* logo displayed on side of every page other than home page */
 
+.primary-content {
+  padding-top: 128px;
+}
+
 .side-content {
   position: absolute;
   display: inline-block;
   /* logo image */
-  background: url("./assets/MTW logo 14 600x587.png");
+  // background: url("./assets/MTW logo 14 600x587.png");
+  background: url("./assets/MTW-logo-bluewhite.png");
+  opacity: .7;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
