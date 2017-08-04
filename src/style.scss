@@ -327,8 +327,10 @@ md-toolbar.main-navbar.nav {
 /*********************
 /* logo displayed on side of every page other than home page */
 
-.primary-content {
+.page-container {
   padding-top: 128px;
+  display: flex;
+  flex-flow: row;
 }
 
 .side-content {

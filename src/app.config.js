@@ -33,33 +33,27 @@ module.exports = function(ngModule) {
               'contentContainer@': {component: 'home'}
             }
           })
-          .state('layout', {
-            url: '',
-            parent: 'main', 
-            views: {
-              'contentContainer@': { template: require('./components/layout/viewLayout.template.html')}
-            }
-          })
+          
           .state('about', {
             url: 'about',
-            parent: 'layout',
+            parent: 'main',
             views: {
-              'primaryContent@layout': { component: 'about' }
+              'contentContainer@': { component: 'about' }
           }
             
           })
           .state('services', {
-            parent: 'layout',
+            parent: 'main',
             url: 'services',
             views: { 
-              'primaryContent@layout': {component: 'services'}
+              'contentContainer@': {component: 'services'}
           }
           })
           .state('appointments', {
-            parent: 'layout',
+            parent: 'main',
             url: 'appointments',
             views: {
-              'primaryContent@layout': {component: 'scheduling'}
+              'contentContainer@': {component: 'scheduling'}
           }
           })
 
