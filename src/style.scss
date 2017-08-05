@@ -65,6 +65,7 @@ md-toolbar.main-navbar.nav {
     font-size: 38px;
     font-weight: 400;
     color: $dark-blue;
+    letter-spacing: -.08em;
     transition: .5s;
   }
 }
@@ -125,6 +126,7 @@ md-toolbar.main-navbar.nav {
     color: #fff;
     text-shadow: 1px 1px 2px $dark-blue;
     z-index: 1;
+    transition: all 1s;
   }
   .hero-main-title {
     position: absolute;
@@ -139,6 +141,7 @@ md-toolbar.main-navbar.nav {
       font-weight: 900;
       color: $white;
       text-transform: capitalize;
+      transition: all 1s;
       :first-child {
         color: $dark-blue;
       }
@@ -157,6 +160,7 @@ md-toolbar.main-navbar.nav {
     padding: 20px;
     p {
       font-size: 1em;
+      transition: all 1s;
       &.sup {
         font-size: 300%;
         font-weight: 200;
@@ -187,11 +191,12 @@ md-toolbar.main-navbar.nav {
       transform: translateY(-50%);
       left:-350px;
       /* logo image */
-      background: url("./assets/MTW logo 14 600x587.png");
-      // background: url("./assets/MTW-logo-bluewhite.png");
+      // background: url("./assets/MTW logo 14 600x587.png");
+      background: url("./assets/logos/MTW-1800x1800-mono-blue.png");
+      opacity: 1;
       background-size: contain;
       background-repeat: no-repeat;
-      transition: .5s;
+      transition: all 1s;
     }
     &::after {
       position: absolute;
@@ -338,8 +343,8 @@ md-toolbar.main-navbar.nav {
   display: inline-block;
   /* logo image */
   // background: url("./assets/MTW logo 14 600x587.png");
-  background: url("./assets/MTW-logo-bluewhite.png");
-  opacity: .7;
+  background: url("./assets/logos/MTW-1800x1800-mono-blue.png");
+  opacity: .9;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
