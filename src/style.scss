@@ -103,7 +103,6 @@ md-toolbar.main-navbar.nav {
   &.hero-container {
     position: relative;
     height: 100vh;
-    background-color: transparent;
     z-index: 1;
     &::after {
       position: absolute;
@@ -115,18 +114,18 @@ md-toolbar.main-navbar.nav {
       // background: url('./assets/woman-in-ocean-facing-sun-blue.jpg') fixed;
       // background: url('./assets/facing-ocean-into-sun-Blue-1920x1080.jpeg') fixed;
       // background: url('./assets/risingclouds-sky-blue-1436x1080.jpg');
-      background:url('./assets/blue-clouds-day-fluffy-53594.jpeg') fixed;
-      // background: radial-gradient(80% 40%, $md-blue, $dark-blue );
-      // background: linear-gradient(rgba($lt-blue,.3), rgba($lt-blue,.3)), url('./assets/bodywork/photoProcessing/floor-2228277_1920.jpg') fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: bottom center;
-      filter: blur(8px);
-      opacity: .9;
-      $lt-red: #e89999;
+      // background:url('./assets/blue-clouds-day-fluffy-53594.jpeg') fixed;
+      // background:  url('./assets/bodywork/photoProcessing/floor-2228277_1920.jpg') fixed;
+      // background: url('./assets/bodywork/photoProcessing/common-blue-2184612_1920.jpg') fixed;
+      background:linear-gradient(rgba($yellow,.3), rgba($yellow, .3)), url('./assets/bodywork/photoProcessing/fresco-379933_1280.jpg') fixed;
+      
+      // background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center left;
+      filter: blur(7px);
+      opacity: .4;
       z-index: -1;
     }
-    $lt-red: #e89999;
   }
     .hero-content {
       position: absolute;

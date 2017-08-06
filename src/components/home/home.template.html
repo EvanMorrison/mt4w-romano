@@ -3,10 +3,10 @@
     <md-content class="md-padding hero-content" 
                 layout="column"
                 layout-align="center center">
-      <md-card  ng-repeat="card in vm.heroCards"
+      <md-card  ng-repeat="card in vm.heroCards track by $index"
                 class="hero-card"
                 layout="row"
-                ui-sref={{card.state}} ui-sref-active="services">
+                ng-click="vm.showPopup($event, card)"> 
         <div class="card-image-container">
           <img ng-src="{{card.imgUrl}}" alt=""
                 class="md-card-image">

@@ -2,36 +2,18 @@ module.exports = function(HomeModule) {
   HomeModule
     .component('home', {
       template: require('./home.template.html'),
-      controller: [HomeController],
+      controller: [
+                      'DataServ',
+                      '$mdDialog',
+                      HomeController
+                    ],
       controllerAs: 'vm'
     });
 
-    function HomeController() {
+    function HomeController(DataServ, $mdDialog) {
       var vm = this;
 
-      vm.heroCards = {
-        card1: {
-          title: "massage",
-          subtitle: "relief for muscles",
-          bodyText: "Learn more about the types of massage available",
-          imgUrl: require("../../assets/bodywork/body-back-1.jpg"),
-          state: 'massage'
-        },
-        card2: {
-          title: "manual lymphatic drainage",
-          subtitle: "correcting restricted circulation",
-          bodyText: "Learn whether MLD can help you.",
-          imgUrl: require("../../assets/bodywork/body-back-2.jpg"),
-          state: 'lymphatic'
-        },
-        card3: {
-          title: "myofascial release",
-          subtitle: "stretch therapy for joints and connective tissue",
-          bodyText: "Find out how myofascial release can make you feel fabulous",
-          imgUrl: require("../../assets/bodywork/body-back-3.jpg"),
-          state: 'myofascial'
-        }
-      }
+      vm.heroCards = DataServ.heroCards;
 
       vm.title = 'Manual Therapy for Wellness'
       vm.provider = {
@@ -40,6 +22,30 @@ module.exports = function(HomeModule) {
         tel: '310-283-9382',
         address1: '9458 E Ironwood Square Dr, Suite 102',
         address2: 'Scottsdale, AZ 85255'
+      }
+      
+      vm.showPopup = function(ev, card) {
+        vm.currentCard = card;
+        $mdDialog.show({
+          template: require('./dialog.template.html'),
+          id: 'homepagePopup',
+          controller: DialogController,
+          controllerAs: 'ctrl',
+          parent: angular.element(document.body),
+          targetEvent: ev,
+          clickOutsideToClose: true,
+          fullScreen: true // only for -xs and -sm breakpoints
+        })
+      }
+
+      function DialogController(DataServ, $mdDialog) {
+        this.parent = vm;
+        this.cardName = this.parent.currentCard.name;
+        this.info = DataServ.modalities[this.cardName].bodyText;
+
+        this.closeDialog = function(ev) {
+          $mdDialog.cancel();
+        }
       }
       
     }

@@ -10,6 +10,7 @@ node_modules
 dist
 images
 assets
+.vscode
 *.log
 
 
