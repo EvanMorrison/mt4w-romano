@@ -12,6 +12,12 @@ module.exports = function(ngModule) {
         .warnPalette('red')
     }])
 
+    .run(['$rootScope', '$state', '$anchorScroll', function($rootScope, $state, $anchorScroll){
+      $rootScope.$on("$locationChangeSuccess", function(){
+        $anchorScroll();
+    })
+    }])
+
     .config(['$locationProvider', '$stateProvider', '$urlRouterProvider',
       function config($locationProvider, $stateProvider, $urlRouterProvider) {
         $locationProvider.html5Mode(true);
@@ -49,6 +55,27 @@ module.exports = function(ngModule) {
               'contentContainer@': {component: 'services'}
           }
           })
+            .state('massage', {
+              parent: 'services',
+              url: '/massage',
+              views: {
+                'contentContainer@': {component: 'massage'}
+              }
+            })
+            .state('lymphatic', {
+              parent: 'services',
+              url: '/manualLymphaticDrainage',
+              views: {
+                'contentContainer@': {component: 'lymphatic'}
+              }
+            })
+            .state('myofascial', {
+              parent: 'services',
+              url: '/myofascialRelease',
+              views: {
+                'contentContainer@': { component: 'myofascial' }
+              }
+            })
           .state('appointments', {
             parent: 'main',
             url: 'appointments',

@@ -1,47 +1,29 @@
 <div>
   <div class="hero hero-container">
-        <div class="hero-main-title">
-          <!-- <p>Three <span class="sup">key</span> modalities to get <span class="sup">your</span> body's <span class="sup">structural</span> systems working &amp;</p> -->
-          <!-- <p>
-            Regain your 
-          </p> -->
-          <h1>
-            <span>health.</span> <span>rejuvination.</span> <span>vitality.</span>
-          </h1>
+    <md-content class="md-padding hero-content" 
+                layout="column"
+                layout-align="center center">
+      <md-card  ng-repeat="card in vm.heroCards"
+                class="hero-card"
+                layout="row"
+                ui-sref={{card.state}} ui-sref-active="services">
+        <div class="card-image-container">
+          <img ng-src="{{card.imgUrl}}" alt=""
+                class="md-card-image">
         </div>
-          <div class="hero-subtitle">
-                <p class="sup">
-                  massage
-                </p>
-                <p class="sub">
-                  relief for muscles
-                </p>
-                <p class="sup">
-                  manual lymphatic drainage 
-                </p>
-                <p class="sub">
-                  correct restricted circulation
-                </p>
-                <p class="sup">
-                  myofascial release
-                </p>
-                <p class="sub">
-                  stretch therapy for joints and connective tissue
-                </p>
-          </div>
-        <div class="hero-aside-box">
-          <p>call 310-283-9382</p>
-          <p>for</p>
-          <p>
-            Free Initial Consultaion
-          </p>
-          <p>
-            Gift Certificates
-          </p>
-          <p>
-            Package Discounts 
-          </p>
+        <div layout="column">
+          <md-card-title class="card-title">
+            <md-card-title-text>
+              <p class="md-headline">{{card.title}}</p>
+              <p class="md-title">{{card.subtitle}}</p>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content class="card-content">
+            {{card.bodyText}}
+          </md-card-content>
         </div>
+      </md-card>
+    </md-content>
   </div>
 
 <section class="section1">
@@ -50,16 +32,16 @@
   <h1 hide-gt-xs class="md-display-1"><strong>Trish Romano</strong><small>, CLT, LMT</small></h1>
     <address id="contact-info">
       <i class="fa fa-phone" aria-hidden="true" style="margin-top: 20px"> </i> 
-      <span class="bold">{{ctrl.provider.tel}}</span>
+      <span class="bold">{{vm.provider.tel}}</span>
       <br>
       <i class="fa fa-envelope-o" style="margin-top: 20px"> </i>
-      <span class="bold"><a href="mailto:{{ctrl.provider.email}}">{{ctrl.provider.email}}</a></span>
+      <span class="bold"><a href="mailto:{{vm.provider.email}}">{{vm.provider.email}}</a></span>
       <br>
       <a style="text-decoration:none" href="https://goo.gl/maps/1okmtzEUX6P2" target="_blank">
         <i class="fa fa-map-marker" style="margin-top: 20px"></i> 
-        <span id="address1" class="bold">{{ctrl.provider.address1}}</span><br>
+        <span id="address1" class="bold">{{vm.provider.address1}}</span><br>
         <i class="fa fa-map-marker" style="visibility:hidden;padding:0"></i> 
-        <span id="address2" class="bold">{{ctrl.provider.address2}}</span><br></a>
+        <span id="address2" class="bold">{{vm.provider.address2}}</span><br></a>
     </address>
 </section>
 
@@ -68,7 +50,7 @@
   <div class="md-display-1 title">
     <a  href="https://goo.gl/maps/AgE9ogSP9mF2">Office Location</a>
   </div>  
-  <p class="subtitle">Our office is in the Ironwood Square professional business park, just south of Shea Blvd. between 92nd and 96th Streets.</p>
+  <p class="subtitle">Our office is situated in the Ironwood Square professional business park, just south of Shea Blvd. between 92nd and 96th Streets.</p>
   <div class="map-group">
     <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.043034973319!2d-111.87954558479734!3d33.578231880737576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b75464e07f99f%3A0x7eae508b7a8757ba!2s9458+E+Ironwood+Square+Dr+%23102%2C+Scottsdale%2C+AZ+85258!5e0!3m2!1sen!2sus!4v1496946900452" 
             width="100%" 

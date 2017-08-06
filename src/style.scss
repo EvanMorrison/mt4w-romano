@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Philosopher|Open+Sans');
 
 //colors
-$light-blue: #ccddff;
+$lt-blue: #ccddff;
 $md-blue: #6a8ad4;
 $royal-blue: #022aff;
 $dark-blue: #337;
@@ -11,8 +11,10 @@ $orange: #ef6a11;
 $lt-orange: #f29659;
 $yellow: #ffd823;
 $red: #e83d3d;
+$lt-red: #e89999;
 $dark-brown: #381904;
-$dark-text: #222;
+$dark-text: #000;
+$gray: #aaa;
 $white: #fff;
 
 
@@ -42,8 +44,7 @@ body {
 md-toolbar.main-navbar.nav {
   position: fixed;
   top: 0;
-  opacity: .9;
-  background: $light-blue;
+  background: linear-gradient(45deg,rgba($gray,.8), rgba($white,1) 50%);
   z-index: 10;
   transition: .3s;
 }
@@ -53,8 +54,8 @@ md-toolbar.main-navbar.nav {
     align-self: center;
   }
   &.brand-logo {
-    width: 75px;
-    height: 75px;
+    width: 90px;
+    height: 90px;
     margin: 0 20px;
     display: inline-block;
     vertical-align: middle;
@@ -64,7 +65,7 @@ md-toolbar.main-navbar.nav {
     font-family: $serif-font;
     font-size: 38px;
     font-weight: 400;
-    color: $dark-blue;
+    color: $dark-text;
     letter-spacing: -.08em;
     transition: .5s;
   }
@@ -101,7 +102,7 @@ md-toolbar.main-navbar.nav {
   overflow: hidden;
   &.hero-container {
     position: relative;
-    height: 830px;
+    height: 100vh;
     background-color: transparent;
     z-index: 1;
     &::after {
@@ -111,129 +112,72 @@ md-toolbar.main-navbar.nav {
       width: 100vw;
       top: 0;
       /* background picture */
-      // background: url('./assets/woman-in-ocean-facing-sun-blue.jpg');
-      // background: url('./assets/facing-ocean-into-sun-Blue-1920x1080.jpeg');
+      // background: url('./assets/woman-in-ocean-facing-sun-blue.jpg') fixed;
+      // background: url('./assets/facing-ocean-into-sun-Blue-1920x1080.jpeg') fixed;
       // background: url('./assets/risingclouds-sky-blue-1436x1080.jpg');
-      background: url('./assets/blue-clouds-day-fluffy-53594.jpeg');
+      background:url('./assets/blue-clouds-day-fluffy-53594.jpeg') fixed;
+      // background: radial-gradient(80% 40%, $md-blue, $dark-blue );
+      // background: linear-gradient(rgba($lt-blue,.3), rgba($lt-blue,.3)), url('./assets/bodywork/photoProcessing/floor-2228277_1920.jpg') fixed;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: bottom center;
+      filter: blur(8px);
       opacity: .9;
+      $lt-red: #e89999;
       z-index: -1;
     }
+    $lt-red: #e89999;
   }
-  .hero-main-title, .hero-subtitle {
-    color: #fff;
-    text-shadow: 1px 1px 2px $dark-blue;
-    z-index: 1;
-    transition: all 1s;
-  }
-  .hero-main-title {
-    position: absolute;
-    top: 240px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    text-align: center;
-    h1 {
-      font-family: $serif-font;
-      font-size: 3.5em;
-      font-weight: 900;
-      color: $white;
-      text-transform: capitalize;
-      transition: all 1s;
-      :first-child {
-        color: $dark-blue;
-      }
-      :nth-child(2) {
-        color: $yellow;
-      }
-      :last-child {
-        color: $red;
-      }
-    }
-  }
-  .hero-subtitle {
-    position: absolute;
-    top: 445px;
-    left: 40%;
-    padding: 20px;
-    p {
-      font-size: 1em;
-      transition: all 1s;
-      &.sup {
-        font-size: 300%;
-        font-weight: 200;
-        // color: $red; 
-      }
-      &.sub {
-        margin-left: 50px;
-        line-height: .5em;
-        color: $dark-blue;
-      }
-      
-      &:first-child {
-        color: $royal-blue;
-      }
-      &:nth-child(3) {
-        color: $yellow;
-      }
-      &:nth-child(5) {
-        color: $red;
-      }
-    }
-    &::before {
+    .hero-content {
       position: absolute;
-      content: ' ';
-      height: 300px;
-      width: 300px;
-      top: 50%;
-      transform: translateY(-50%);
-      left:-350px;
-      /* logo image */
-      // background: url("./assets/MTW logo 14 600x587.png");
-      background: url("./assets/logos/MTW-1800x1800-mono-blue.png");
-      opacity: 1;
-      background-size: contain;
-      background-repeat: no-repeat;
+      background: transparent;
+      padding-top: 138px;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    .hero-card {
+      min-height: 125px;
+      // max-height: 220px;
+      width: 60vw;
+      min-width: 780px;
+      background-color: $dark-text;
+      color: $white;
       transition: all 1s;
-    }
-    &::after {
-      position: absolute;
-      content: ' ';
-      top: 0;
-      left: -100vw;
-      width: 250vw;
-      height: 100%;
-      background: $light-blue;
-      box-shadow: 0 1px 8px $dark-text;
-      z-index: -2;
-      opacity: .7;
-      transition: .5s;
-    }
-  }
-  .hero-aside-box {
-    display: none;
-    position: absolute;
-    right: 40px;
-    bottom: -100px;
-    border: 2px solid $white;
-    padding: 15px;
-    width: 275px;
-    text-align: center;
-    background: rgba($md-blue, 1);
-    :first-child {
-      color: $white;
-      font-size: 1.5em;
-      font-weight: 800;
-      line-height: 1em;
-      letter-spacing: .02em;
-    }
-    p + p {
-      font-size: 1em;
-      line-height: 1.5em;
-      color: $white;
-      font-weight: 800;
+      &:hover {
+        cursor: pointer;
+      }
+      .card-image-container {
+        // position: relative;
+        max-width: 300px;
+        // height: 100%;
+        overflow: hidden;
+        .md-card-image {
+          display: block;
+          position: relative;
+          left: -50px;
+          // left: 0;
+          width: 150%;
+          height: 100%;
+          // height: auto;
+          transition: all 5s;
+          transform-origin: left bottom;
+        }
+      }
+      &:hover {
+        transform: scale(1.05);
+        .md-card-image {
+        transform: scale(1.1);
+        }
+      }
+      .card-title {
+        flex: 0 0 auto;
+        p:first-child {
+          font-size: 200%;
+          font-weight: 400;
+        }
+      }
     }
   }
 }
@@ -258,6 +202,28 @@ md-toolbar.main-navbar.nav {
   }
   a {
     color: $dark-text;
+  }
+  &::after {
+    position: absolute;
+    content: ' ';
+    width: 50vw;
+    max-width: 400px;
+    height: auto;
+    top: -50px;
+    bottom: 0;
+    margin: auto 0;
+    right: 20px;
+    /*  headshot of Trish  */
+    // background: url('./assets/bodywork/photoProcessing/portraits/model-2303361_640.jpg');
+    // background: url('./assets/bodywork/photoProcessing/portraits/gaba-1874655_640.jpg');
+    // background: url('./assets/bodywork/photoProcessing/portraits/grecian-1823278_640.jpg');
+    // background: url('./assets/bodywork/photoProcessing/portraits/domestic-life-2364990_640.png');
+    // background: url('./assets/bodywork/photoProcessing/portraits/girl-1319114_640.jpg');
+    // background: url('./assets/bodywork/photoProcessing/portraits/girl-1319115_640.jpg');
+    background: url('./assets/bodywork/photoProcessing/portraits/woman-1255321_640.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
   }
 }
 

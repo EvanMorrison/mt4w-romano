@@ -16,6 +16,6 @@ require('./components/navbar')(app);
 
 require('./components/about/about.component')(app);
 
-require('./components/services/services.component')(app);
+require('./components/services')(app);
 
 require('./components/scheduling/scheduling.component')(app);

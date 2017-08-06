@@ -3,13 +3,38 @@ module.exports = function(HomeModule) {
     .component('home', {
       template: require('./home.template.html'),
       controller: [HomeController],
-      controllerAs: 'ctrl'
+      controllerAs: 'vm'
     });
 
     function HomeController() {
-      var ctrl = this;
-      ctrl.title = 'Manual Therapy for Wellness'
-      ctrl.provider = {
+      var vm = this;
+
+      vm.heroCards = {
+        card1: {
+          title: "massage",
+          subtitle: "relief for muscles",
+          bodyText: "Learn more about the types of massage available",
+          imgUrl: require("../../assets/bodywork/body-back-1.jpg"),
+          state: 'massage'
+        },
+        card2: {
+          title: "manual lymphatic drainage",
+          subtitle: "correcting restricted circulation",
+          bodyText: "Learn whether MLD can help you.",
+          imgUrl: require("../../assets/bodywork/body-back-2.jpg"),
+          state: 'lymphatic'
+        },
+        card3: {
+          title: "myofascial release",
+          subtitle: "stretch therapy for joints and connective tissue",
+          bodyText: "Find out how myofascial release can make you feel fabulous",
+          imgUrl: require("../../assets/bodywork/body-back-3.jpg"),
+          state: 'myofascial'
+        }
+      }
+
+      vm.title = 'Manual Therapy for Wellness'
+      vm.provider = {
         name: 'Trish Romano',
         email: 'trish@manualtherapy4wellness.com',
         tel: '310-283-9382',

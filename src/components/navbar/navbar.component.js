@@ -19,7 +19,7 @@ module.exports = function(ngModule) {
             $mdSidenav('left').toggle();
         }
 
-          vm.logoImg = require('../../assets/MTW logo 14 600x587.png');
+          vm.logoImg = require('../../assets/logos/MTW-1800x1800-mono-blue.png');
 
       }
 
