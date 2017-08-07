@@ -13,5 +13,7 @@ module.exports = function(app) {
       const vm = this;
       
       vm.pageContent = DataServ.modalities.myofascial;
+
+      vm.sideimage = DataServ.sideImages.myofascial;
     }
 }

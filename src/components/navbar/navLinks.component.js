@@ -2,22 +2,30 @@ module.exports = function(ngModule) {
   ngModule
     .component('navbarLinks', {
       template: require('./navLinks.template.html'),
-      controller: [   '$mdMenu',
+      controller: [   
+                      '$timeout',
+                      '$mdMenu',
                       NavLinkController],
       controllerAs: 'vm',
       bindings: { onChange: '&' }
     });
 
-    function NavLinkController ($mdMenu) {
+    function NavLinkController ($timeout, $mdMenu) {
       const vm = this;
 
       vm.closeSidenav = function() {
           vm.onChange();
       }
       
+      vm.cancelOpen = function() {
+        $timeout.cancel(vm.openTimeout);
+      }
+      
       vm.openMenu = function($mdMenu, ev) {
         ev.preventDefault();
-        $mdMenu.open(ev);
+        vm.openTimeout = $timeout(function() {
+            $mdMenu.open(ev);
+        },500)
       }
 
         vm.navLinks = [

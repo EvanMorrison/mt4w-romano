@@ -2,12 +2,17 @@ module.exports = function(ngModule) {
   ngModule
     .component('about', {
       template: require('./about.template.html'),
-      controller: [AboutController],
-      controllerAs: 'ctrl'
+      controller: [
+                      'DataServ',
+                      AboutController
+                  ],
+      controllerAs: 'vm'
     });
 
-    function AboutController() {
-      const ctrl = this;
+    function AboutController(DataServ) {
+      const vm = this;
+
+      vm.sideimage = DataServ.sideImages.about;
     }
 
 }

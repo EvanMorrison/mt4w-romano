@@ -6,12 +6,13 @@ module.exports = function(ngModule) {
         controller: [ 
                       '$mdSidenav',
                       '$state',
+                      'DataServ',
                       NavbarController
                     ],
         controllerAs: 'vm'
       });
 
-      function NavbarController($mdSidenav, $state) {
+      function NavbarController($mdSidenav, $state, DataServ) {
         const vm = this;
         vm.toggleNav = function($event) {
             if ($event.target.text === 'Home') vm.athome = true;
@@ -19,7 +20,7 @@ module.exports = function(ngModule) {
             $mdSidenav('left').toggle();
         }
 
-          vm.logoImg = require('../../assets/logos/MTW-1800x1800-mono-blue.png');
+          vm.logoImg = DataServ.mainLogo;
 
       }
 

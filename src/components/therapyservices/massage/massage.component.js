@@ -14,5 +14,6 @@ module.exports = function(app) {
 
         vm.pageContent = DataServ.modalities.massage;
 
+        vm.sideimage = DataServ.sideImages.massage;
     }
 }

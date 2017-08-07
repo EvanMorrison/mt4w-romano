@@ -44,7 +44,7 @@ body {
 md-toolbar.main-navbar.nav {
   position: fixed;
   top: 0;
-  background: linear-gradient(45deg,rgba($gray,.8), rgba($white,1) 50%);
+  background: linear-gradient(45deg,rgba($gray,.2), rgba($white,1) 50%), linear-gradient(rgba($yellow,1),rgba($yellow,1));
   z-index: 10;
   transition: .3s;
 }
@@ -54,8 +54,8 @@ md-toolbar.main-navbar.nav {
     align-self: center;
   }
   &.brand-logo {
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
     margin: 0 20px;
     display: inline-block;
     vertical-align: middle;
@@ -219,7 +219,7 @@ md-toolbar.main-navbar.nav {
     // background: url('./assets/bodywork/photoProcessing/portraits/domestic-life-2364990_640.png');
     // background: url('./assets/bodywork/photoProcessing/portraits/girl-1319114_640.jpg');
     // background: url('./assets/bodywork/photoProcessing/portraits/girl-1319115_640.jpg');
-    background: url('./assets/bodywork/photoProcessing/portraits/woman-1255321_640.jpg');
+    // background: url('./assets/bodywork/photoProcessing/portraits/woman-1255321_640.jpg');
     background-repeat: no-repeat;
     background-size: contain;
     z-index: -1;
@@ -308,7 +308,6 @@ md-toolbar.main-navbar.nav {
   display: inline-block;
   /* logo image */
   // background: url("./assets/MTW logo 14 600x587.png");
-  background: url("./assets/logos/MTW-1800x1800-mono-blue.png");
   opacity: .9;
   background-repeat: no-repeat;
   background-size: contain;

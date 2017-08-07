@@ -6,9 +6,13 @@
                       ui-sref={{link.state}} ui-sref-active="active">
             {{link.label}}
           </md-button>
-          <md-menu ng-if="link.isMenu" ui-sref-active="active" ui-sref={{link.state}}>
+          <md-menu  ng-if="link.isMenu" 
+                    ng-click="vm.openMenu($mdMenu, $event)" 
+                    ui-sref-active="active" 
+                    >
             <md-button  
                         ng-mouseenter="vm.openMenu($mdMenu, $event)"
+                        ng-mouseleave="vm.cancelOpen()"
                         ui-sref={{link.state}}>
                 {{link.label}} <i class="fa fa-caret-down"></i>
             </md-button>

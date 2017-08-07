@@ -34,7 +34,7 @@ module.exports = function(HomeModule) {
           parent: angular.element(document.body),
           targetEvent: ev,
           clickOutsideToClose: true,
-          fullScreen: true // only for -xs and -sm breakpoints
+          fullscreen: true // only for -xs and -sm breakpoints
         })
       }
 
