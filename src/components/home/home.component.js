@@ -1,5 +1,6 @@
 module.exports = function(HomeModule) {
   HomeModule
+    
     .component('home', {
       template: require('./home.template.html'),
       controller: [
@@ -15,7 +16,6 @@ module.exports = function(HomeModule) {
 
       vm.heroCards = DataServ.heroCards;
 
-      vm.title = 'Manual Therapy for Wellness'
       vm.provider = {
         name: 'Trish Romano',
         email: 'trish@manualtherapy4wellness.com',
@@ -24,6 +24,7 @@ module.exports = function(HomeModule) {
         address2: 'Scottsdale, AZ 85255'
       }
       
+      // open modal panels with more info on modalities
       vm.showPopup = function(ev, card) {
         vm.currentCard = card;
         $mdDialog.show({
@@ -38,6 +39,9 @@ module.exports = function(HomeModule) {
         })
       }
 
+
+      // controller function for modal panel
+      DialogController.$inject = [ 'DataServ', '$mdDialog' ];
       function DialogController(DataServ, $mdDialog) {
         this.parent = vm;
         this.cardName = this.parent.currentCard.name;
@@ -47,6 +51,8 @@ module.exports = function(HomeModule) {
           $mdDialog.cancel();
         }
       }
+
+      
       
     }
 

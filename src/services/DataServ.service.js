@@ -3,7 +3,7 @@ module.exports = function(app) {
   app
     .factory('DataServ', function(){
       return {
-        mainLogo: require('../assets/logos/MTW-1800x1800-bgy.png'),
+        mainLogo: require('../assets/logos/MTW-1800x1800-mono-grn.png'),
         heroCards: {
                       card1: {
                         name: "massage",

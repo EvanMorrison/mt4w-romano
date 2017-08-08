@@ -7,15 +7,16 @@ $lt-blue: #ccddff;
 $md-blue: #6a8ad4;
 $royal-blue: #022aff;
 $dark-blue: #337;
+$dark-brown: #381904;
+$gray: #aaa;
+$green: #60a577;
 $orange: #ef6a11;
 $lt-orange: #f29659;
-$yellow: #ffd823;
 $red: #e83d3d;
 $lt-red: #e89999;
-$dark-brown: #381904;
-$dark-text: #000;
-$gray: #aaa;
 $white: #fff;
+$yellow: #ffd823;
+$dark-text: #000;
 
 
 //fonts
@@ -44,7 +45,7 @@ body {
 md-toolbar.main-navbar.nav {
   position: fixed;
   top: 0;
-  background: linear-gradient(45deg,rgba($gray,.2), rgba($white,1) 50%), linear-gradient(rgba($yellow,1),rgba($yellow,1));
+  background: linear-gradient(45deg,rgba($white,.4), rgba($white,1) 50%), linear-gradient(rgba($green,1),rgba($green,1));
   z-index: 10;
   transition: .3s;
 }
@@ -103,6 +104,7 @@ md-toolbar.main-navbar.nav {
   &.hero-container {
     position: relative;
     height: 100vh;
+    max-height: 1020px;
     z-index: 1;
     &::after {
       position: absolute;
@@ -117,12 +119,12 @@ md-toolbar.main-navbar.nav {
       // background:url('./assets/blue-clouds-day-fluffy-53594.jpeg') fixed;
       // background:  url('./assets/bodywork/photoProcessing/floor-2228277_1920.jpg') fixed;
       // background: url('./assets/bodywork/photoProcessing/common-blue-2184612_1920.jpg') fixed;
-      background:linear-gradient(rgba($yellow,.3), rgba($yellow, .3)), url('./assets/bodywork/photoProcessing/fresco-379933_1280.jpg') fixed;
+      background:linear-gradient(rgba($green,.3), rgba($green, .3)), url('./assets/bodywork/photoProcessing/fresco-379933_1280.jpg') fixed;
       
       // background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center left;
-      filter: blur(7px);
+      filter: blur(3px);
       opacity: .4;
       z-index: -1;
     }
@@ -345,5 +347,7 @@ md-toolbar.main-navbar.nav {
   max-width: 550px;
 }
 
+
 /*  media query styling */
+@import 'styleMap';
 @import 'styleMedia';

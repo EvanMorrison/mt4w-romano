@@ -2,7 +2,7 @@
 module.exports = function(ngModule) {
 
   ngModule
-
+  
     .config(['$mdThemingProvider', function($mdThemingProvider){
       $mdThemingProvider.theme('default')
         .primaryPalette('blue')

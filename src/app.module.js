@@ -12,7 +12,7 @@ require('./services/DataServ.service')(app);
 
 require('./app.config')(app);
   
-require('./components/home/home.component')(app);
+require('./components/home')(app);
 
 require('./components/navbar')(app);
 
