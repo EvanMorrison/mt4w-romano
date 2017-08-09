@@ -1,11 +1,13 @@
 module.exports = function(app) {
   app
     .directive('googleMap', ['$timeout', '$q', function($timeout, $q) {
-        return { 
-          transclude: true,
-          link: function(scope, element, attrs) {
+        return function(scope, element, attrs) {
             
-            // add script tag to the DOM (if it isn't there already) to get the google maps api
+            const elem = element[0];
+            // address to show on the map
+            const address = '9458 East Ironwood Square Drive #102, Scottsdale, AZ 85258'
+           
+          // add script tag to the DOM (if it isn't there already) to get the google maps api
             function addScript() {
                 const mapurl = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBYRJBr8_LNRSUzZUYSbxezDkMzA5d3qN8'
                 const newScript = angular.element(document.createElement('script'));
@@ -14,11 +16,25 @@ module.exports = function(app) {
                     angular.element(document.body).append(newScript);
                 }
             }
-            const elem = element[0];
-            // google maps api initialization
-          function initMap(office) {
-            // const center = {lat: 33.580377, lng: -111.880618}
+          
+          // convert street address into lat, lng coordinates
+          function codeAddress(address) {
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode( { 'address': address}, function(results, status) {
+              if (status == 'OK') {
+                const addressLatLng = results[0].geometry.location;
+                // initialize the map, sending in the lat/lng for the office address
+                initMap(addressLatLng);
+                return
+              } else {
+                console.log('Geocode was not successful for the following reason: ' + status);
+                return {}
+              }
+            });
+          }
 
+          // google maps api initialization
+          function initMap(office) {
             const map = new google.maps.Map(elem, {
               zoom: 13,
               center: office,
@@ -35,30 +51,29 @@ module.exports = function(app) {
                   position: office,
                   map: map
                 });
-          }
-          // convert street address into lat, lng coordinates
-          function codeAddress(address) {
-            const geocoder = new google.maps.Geocoder();
-            geocoder.geocode( { 'address': address}, function(results, status) {
-              if (status == 'OK') {
-                const addressLatLng = results[0].geometry.location;
-                initMap(addressLatLng);
-                return
-              } else {
-                console.log('Geocode was not successful for the following reason: ' + status);
-                return {}
-              }
-            });
+            const infoWindow = new google.maps.InfoWindow({
+                  content: require('./mapInfo.template.html')
+            })
+            // info window starts open
+            infoWindow.open(map, marker);
+            // reopen info window (if closed) on clicking the marker
+            marker.addListener('click', function() {
+              infoWindow.open(map, marker);
+            })
           }
           
-          const address = '9458 East Ironwood Square Drive #102, Scottsdale, AZ 85258'
-            if (window.google) {
+          
+          
+          // ensure google api has loaded before running initialization  
+          if (window.google) {
+              // start by getting lat/lng corrdinates for office address
               codeAddress(address);
             } else {
+              // load the google api if it is not already
               addScript();
+              // give it time to load, then start the initialization
               $timeout(function(){codeAddress(address)},1000)
             }
         }
-      }
     }])
 }

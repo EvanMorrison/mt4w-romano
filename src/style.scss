@@ -113,12 +113,6 @@ md-toolbar.main-navbar.nav {
       width: 100vw;
       top: 0;
       /* background picture */
-      // background: url('./assets/woman-in-ocean-facing-sun-blue.jpg') fixed;
-      // background: url('./assets/facing-ocean-into-sun-Blue-1920x1080.jpeg') fixed;
-      // background: url('./assets/risingclouds-sky-blue-1436x1080.jpg');
-      // background:url('./assets/blue-clouds-day-fluffy-53594.jpeg') fixed;
-      // background:  url('./assets/bodywork/photoProcessing/floor-2228277_1920.jpg') fixed;
-      // background: url('./assets/bodywork/photoProcessing/common-blue-2184612_1920.jpg') fixed;
       background:linear-gradient(rgba($green,.3), rgba($green, .3)), url('./assets/bodywork/photoProcessing/fresco-379933_1280.jpg') fixed;
       
       // background-repeat: no-repeat;
@@ -288,7 +282,7 @@ md-toolbar.main-navbar.nav {
   width: 95%;
   max-width: 600px;
   height: 450px;
-  top: 410px;
+  top: 430px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
