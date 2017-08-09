@@ -8,14 +8,16 @@ const app = angular.module('MTWApp', [
                                         'ui.router'
                                       ]);
 
+require('./services/DataServ.service')(app);
+
 require('./app.config')(app);
   
-require('./components/home/home.component')(app);
+require('./components/home')(app);
 
 require('./components/navbar')(app);
 
 require('./components/about/about.component')(app);
 
-require('./components/services/services.component')(app);
+require('./components/therapyservices')(app);
 
 require('./components/scheduling/scheduling.component')(app);

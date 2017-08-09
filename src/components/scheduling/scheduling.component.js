@@ -2,18 +2,20 @@ module.exports = function(ngModule) {
   ngModule
     .component('scheduling', {
       template: require('./scheduling.template.html'),
-      controller: [   '$scope',
+      controller: [   
+                      '$scope',
+                      'DataServ',
                       SchedulingController],
       controllerAs: 'vm'
     })
 
-    function SchedulingController($scope) {
+    function SchedulingController($scope, DataServ) {
       const vm = this;
 
-      vm.onChanges = function() {
-        console.log()
-      }
+      // picture to show in side div
+      vm.sideimage = DataServ.sideImages.scheduling;
 
+      // allow user to send an email directly from the built in webform
       vm.submitEmail = function(e) {
           e.preventDefault();
           vm.wasEmailSent = false;

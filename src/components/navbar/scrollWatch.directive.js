@@ -29,7 +29,7 @@ module.exports = function(app) {
             }  
           }
           if (sd < -5 ) {
-                angular.element(elem).removeClass('nav-hide')
+                angular.element(elem).removeClass('nav-hide');
           }
           if (sd < 0 && $window.scrollY < 128) {
             angular.element(elem).removeClass('nav-shrink');

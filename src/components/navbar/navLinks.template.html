@@ -1,9 +1,29 @@
 <div flex-gt-sm layout-gt-sm="row" layout="column" layout-align="end center" layout-align-gt-sm="start center"
           class="navbar">
-        <md-button  ng-repeat="link in ctrl.navLinks"
-                    ng-click="ctrl.closeSidenav()"
-                    ui-sref={{link.state}} ui-sref-active="active">
-         {{link.label}}
-       </md-button>
-       
+        <div ng-repeat="link in vm.navLinks">
+          <md-button  ng-if="!link.isMenu"
+                      ng-click="vm.closeSidenav()"
+                      ui-sref={{link.state}} ui-sref-active="active">
+            {{link.label}}
+          </md-button>
+          <md-menu  ng-if="link.isMenu" 
+                    ng-click="vm.openMenu($mdMenu, $event)" 
+                    ui-sref-active="active" 
+                    >
+            <md-button  
+                        ng-mouseenter="vm.openMenu($mdMenu, $event)"
+                        ng-mouseleave="vm.cancelOpen()"
+                        ui-sref={{link.state}}>
+                {{link.label}} <i class="fa fa-caret-down"></i>
+            </md-button>
+            <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+               <md-menu-item ng-repeat="item in link.menuItems">
+                <md-button ng-click="vm.closeSidenav()"
+                            ui-sref={{item.state}}>
+                    {{item.label}}
+                </md-button>
+              </md-menu-item> 
+            </md-menu-content>
+          </md-menu>
+        </div>       
 </div>

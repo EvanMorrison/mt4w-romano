@@ -1,0 +1,13 @@
+<div class="page-container">
+  <div class="page-content">
+    <h1 class="page-heading"> {{vm.pageContent.pageHeading}} </h1>
+    <div class="body-text">
+      <p  ng-repeat="paragraph in vm.pageContent.bodyText">
+          {{paragraph}}
+      </p>
+    </div>
+  </div>
+  <div  class="side-content" 
+        style="background-image:url({{vm.sideimage}}"
+      ></div>
+</div>

@@ -54,7 +54,7 @@ module.exports = (env = {}) => {
                       loader: 'url-loader',
                       options: {
                           limit: 10000,
-                          name: 'assets/[hash].[ext]'
+                          name: 'assets/[name].[hash].[ext]'
                       }
                   }]
           },
