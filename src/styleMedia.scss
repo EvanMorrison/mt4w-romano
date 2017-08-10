@@ -129,14 +129,8 @@
       font-size: 3.5em;
     }
     .hero-subtitle {
-      left: calc(200px + 5%);
       p.sup {
         font-size: 300%;
-      }
-    &::before {
-      width: 200px;
-      height: 200px;
-      left: -225px;
       }
     }
   }
@@ -151,6 +145,12 @@
       p.sup {
         font-size: 200%;
       }
+    &::before {
+      width: 175px;
+      height: 175px;
+      left: -160px;
+      opacity: 1;
+    }
     }
   }
 }
@@ -185,6 +185,7 @@
       margin: auto;
       top: -60px;
       z-index: -2;
+      opacity: 1;
       }
     &::after {
       opacity: 0.7;
@@ -216,12 +217,17 @@
       top:auto;
       bottom: 0;
       padding: 10px 5px;
+      box-sizing: border-box;
+      width:100%;
       :nth-child(3) {
         font-size: .9em;
         letter-spacing: -.05em;
       }
       p.sup ~ p.sup {
         margin-top: .25em;
+      }
+      p.sub {
+        margin-left: 25px;
       }
     }
   }
