@@ -3,7 +3,7 @@ module.exports = function(app) {
   app
     .factory('DataServ', function(){
       return {
-        mainLogo: require('../assets/logos/MTW-1800x1800-mono-grn.png'),
+        mainLogo: require('../assets/logos/MTW-1800x1800-noborder.png'),
         heroCards: {
                       card1: {
                         name: "massage",
@@ -62,7 +62,7 @@ module.exports = function(app) {
           massage: require('../assets/logos/MTW-1800x1800-mono-blgray.png'),
           lymphatic: require('../assets/logos/MTW-1800x1800-mono-grn.png'),
           myofascial: require('../assets/logos/MTW-1800x1800-mono-red.png'),
-          about: require('../assets/bodywork/photoProcessing/hummingbird-2139279_1280.jpg'),
+          about: require('../assets/bodywork/photoProcessing/common-blue-2184612_1920.jpg'),
           scheduling: require('../assets/bodywork/photoProcessing/drip-1972411_1920.jpg'),            
           services: require('../assets/bodywork/photoProcessing/relaxation-686392_1920.jpg'),
           

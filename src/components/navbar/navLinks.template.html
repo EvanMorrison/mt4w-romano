@@ -1,12 +1,12 @@
 <div flex-gt-sm layout-gt-sm="row" layout="column" layout-align="end center" layout-align-gt-sm="start center"
           class="navbar">
         <div ng-repeat="link in vm.navLinks">
-          <md-button  ng-if="!link.isMenu"
+          <md-button  
                       ng-click="vm.closeSidenav()"
                       ui-sref={{link.state}} ui-sref-active="active">
             {{link.label}}
           </md-button>
-          <md-menu  ng-if="link.isMenu" 
+          <!-- <md-menu  ng-if="link.isMenu" 
                     ng-click="vm.openMenu($mdMenu, $event)" 
                     ui-sref-active="active" 
                     >
@@ -24,6 +24,6 @@
                 </md-button>
               </md-menu-item> 
             </md-menu-content>
-          </md-menu>
+          </md-menu> -->
         </div>       
 </div>

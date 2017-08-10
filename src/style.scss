@@ -3,10 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Philosopher|Open+Sans');
 
 //colors
+$dark-blue: #337;
 $light-blue: #ccddff;
 $md-blue: #6a8ad4;
 $royal-blue: #022aff;
-$dark-blue: #337;
 $orange: #ef6a11;
 $lt-orange: #f29659;
 $yellow: #ffd823;
@@ -15,6 +15,9 @@ $dark-brown: #381904;
 $dark-text: #222;
 $white: #fff;
 
+$logo-blue: #43c7ed;
+$logo-green: #66c368;
+$logo-orange: #ff7d09;
 
 //fonts
 $sans-font: 'Open Sans', 'Helvetica Neue', 'sans serif';
@@ -53,8 +56,8 @@ md-toolbar.main-navbar.nav {
     align-self: center;
   }
   &.brand-logo {
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
     margin: 0 20px;
     display: inline-block;
     vertical-align: middle;
@@ -64,7 +67,7 @@ md-toolbar.main-navbar.nav {
     font-family: $serif-font;
     font-size: 38px;
     font-weight: 400;
-    color: $dark-blue;
+    color: $dark-text;
     letter-spacing: -.08em;
     transition: .5s;
   }
@@ -143,22 +146,27 @@ md-toolbar.main-navbar.nav {
       text-transform: capitalize;
       transition: all 1s;
       :first-child {
-        color: $dark-blue;
+        color: $logo-green;
+        // color: $dark-blue;
       }
       :nth-child(2) {
-        color: $yellow;
+        color: $logo-orange;
+        // color: $yellow;
       }
       :last-child {
-        color: $red;
+        color: $logo-blue;
+        // color: $red;
       }
     }
   }
   .hero-subtitle {
     position: absolute;
+    width: 100%;
     top: 445px;
-    left: 40%;
+    left: 25%;
     padding: 20px;
     p {
+      position: relative;
       font-size: 1em;
       transition: all 1s;
       &.sup {
@@ -173,13 +181,26 @@ md-toolbar.main-navbar.nav {
       }
       
       &:first-child {
-        color: $royal-blue;
+        color: $logo-green;
       }
       &:nth-child(3) {
-        color: $yellow;
+        color: $logo-orange;
       }
       &:nth-child(5) {
-        color: $red;
+        color: $logo-blue;
+      }
+      &.sup::before {
+        position: absolute;
+        content: ' ';
+        height: 30px;
+        width: 30px;
+        left: -30px;
+        top: 24px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 1;
+        z-index: 100;
+        transition: .5s;
       }
     }
     &::before {
@@ -191,12 +212,11 @@ md-toolbar.main-navbar.nav {
       transform: translateY(-50%);
       left:-350px;
       /* logo image */
-      // background: url("./assets/MTW logo 14 600x587.png");
-      background: url("./assets/logos/MTW-1800x1800-mono-blue.png");
-      opacity: 1;
+      background: url("./assets/logos/MTW-1800x1800-noborder2.png");
+      opacity: 0;
       background-size: contain;
       background-repeat: no-repeat;
-      transition: all 1s;
+      transition: all .5s;
     }
     &::after {
       position: absolute;
@@ -341,12 +361,13 @@ md-toolbar.main-navbar.nav {
 .side-content {
   position: absolute;
   display: inline-block;
+  box-shadow: 1px 1px 3px 2px #999;
   /* logo image */
   // background: url("./assets/MTW logo 14 600x587.png");
   background: url("./assets/logos/MTW-1800x1800-mono-blue.png");
   opacity: .9;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center center;
 }
 
